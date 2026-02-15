@@ -3,7 +3,7 @@ import rajesh from "../../assets/images/rajeshkewat.webp";
 import zeenews from "../../assets/images/zeenews.webp";
 import oxford from "../../assets/images/oxford.webp";
 import Tedx from "../../assets/images/Ted-x.webp";
-import Asiaone from "../../assets/images/Asia_one.webp";
+import Asiaone from "../../assets/images/Ted-x.webp";
 import midday9999 from "../../assets/images/midday9999.webp";
 import footerforbase from "../../assets/images/footer-forbes-logo.webp";
 
