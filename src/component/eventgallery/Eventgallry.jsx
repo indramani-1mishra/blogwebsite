@@ -1,6 +1,6 @@
 import React from 'react'
 import besinessmanoftheyear from "../../assets/images/businessman-of-the-year.webp";
-import tedx from "../../assets/images/Tedx2.webp";
+import tedx from "../../assets/images/businessman-of-the-year.webp";
 import iit from "../../assets/images/IIT.webp";
 
 export default function Eventgallry() {
