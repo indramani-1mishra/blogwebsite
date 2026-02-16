@@ -2,7 +2,7 @@ import React from 'react'
 import { IoCallOutline } from "react-icons/io5";
 import { MdOutlineEmail } from "react-icons/md";
 import { Link } from 'react-router-dom';
-import logo from "../../assets/images/logo.jpg";
+import logo from "../../assets/images/logo.jpeg";
 
 export default function Upperheader() {
   return (
@@ -13,14 +13,14 @@ export default function Upperheader() {
         <div className='flex items-center gap-3 md:gap-6'>
           {/* Logo */}
           <div className='flex-shrink-0'>
-            <img src={logo} alt="Online Legal India" className='w-10 h-10 md:w-12 md:h-12 rounded-full object-cover' /> 
+            <img src={logo} alt="Online Legal India" className='w-10 h-10 md:w-15 md:h-15 rounded-full object-cover ' /> 
           </div>
           
           {/* Phone */}
           <div className='flex items-center gap-2'>
             <IoCallOutline className='text-xl md:text-2xl flex-shrink-0' />
-            <a href="tel:+918069029400" className='text-xs md:text-sm hover:text-gray-300 transition-colors whitespace-nowrap'>
-              08069029400
+            <a href="tel:+91000000000" className='text-xs md:text-sm hover:text-gray-300 transition-colors whitespace-nowrap'>
+              0000000000
             </a>
           </div>
           
@@ -28,7 +28,7 @@ export default function Upperheader() {
           <div className='hidden md:flex items-center gap-2'>
             <MdOutlineEmail className='text-xl md:text-2xl flex-shrink-0' />
             <a href="mailto:info@onlinelegalindia.com" className='text-xs md:text-sm hover:text-gray-300 transition-colors whitespace-nowrap'>
-              info@onlinelegalindia.com
+              infoyouremail.com
             </a>
           </div>
         </div>

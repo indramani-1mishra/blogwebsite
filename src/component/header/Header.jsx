@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import componyname from '../../assets/images/componyname.svg'
+import componyname from '../../assets/images/componyname.png'
 import { Link } from 'react-router-dom'
 import { AiFillCaretDown } from "react-icons/ai";
 import { CgMoreVerticalAlt } from "react-icons/cg";
@@ -17,7 +17,7 @@ export default function Header() {
        <img 
         src={componyname}
         alt="Online Legal India"
-        className='h-10 object-contain '
+        className='h-14 object-contain w-auto '
        /> 
       </div>
       

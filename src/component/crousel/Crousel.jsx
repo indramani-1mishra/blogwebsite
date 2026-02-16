@@ -1,11 +1,11 @@
 import React from 'react'
-import manimage from "../../assets/images/manimage.webp";
+//import manimage from "../../assets/images/manimage.webp";
 import gogalrating from "../../assets/images/gogalrating.webp";
 import { FaTrademark, FaBuilding, FaCertificate, FaLandmark, FaFileAlt, FaTasks, FaHeadset, FaUserTie } from 'react-icons/fa';
 
 export default function Crousel() {
   return (
-    <div className='relative w-full md:h-[500px] bg-gradient-to-br from-[#1a2332] via-[#2d4a5c] to-[#1a2332] flex items-center justify-between md:flex-row px-12 flex-col h-[1000px]   '>
+    <div className='relative w-full md:h-[500px] bg-gradient-to-br from-[#1a2332] via-[#2d4a5c] to-[#1a2332] flex items-center justify-between md:flex-row px-12 flex-col    '>
       
       
       <div className='absolute inset-0 opacity-10'>
@@ -101,14 +101,16 @@ export default function Crousel() {
       {/* Right Image */}
       <div className='relative z-10 flex items-end justify-end h-full'>
         <div className='relative'>
-          {/* Yellow accent circle */}
-          <div className='absolute -right-10 bottom-10 top-1/4 w-64 h-64 bg-yellow-300 rounded-full -z-10'></div>
+          {/* Yellow accent circle 
+          <div className='absolute -right-10  top-1/4 w-64 h-64 bg-yellow-300 rounded-full -z-10'></div>
+          */}
           
-          <img 
+          
+         {/** <img 
             src={manimage} 
             alt="Professional" 
             className='h-[450px] object-contain'
-          />
+          /> */}
         </div>
       </div>
     </div>
