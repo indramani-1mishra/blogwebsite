@@ -37,84 +37,101 @@ export default function Networks() {
   ];
 
   const pastExperiences = [
-    { id: 1, logo: oxford, alt: "Oxford" },
-    { id: 2, logo: footerforbase, alt: "Pearson" },
+    { id: 1, logo: oxford,       alt: "Oxford"  },
+    { id: 2, logo: footerforbase, alt: "Forbes"  },
     { id: 3, logo: footerforbase, alt: "Educomp" }
   ];
 
   return (
-    <div className='w-full bg-gray-200 py-16'>
-      <div className='container mx-auto px-6 md:px-12'>
-        
+    <div className='w-full bg-[#0a0f1a] py-16 relative overflow-hidden'>
+
+      {/* Background glows */}
+      <div className='absolute top-0 left-0 w-96 h-96 bg-[#1e6fd9] opacity-5 rounded-full blur-3xl pointer-events-none'></div>
+      <div className='absolute bottom-0 right-0 w-96 h-96 bg-[#4fc84a] opacity-5 rounded-full blur-3xl pointer-events-none'></div>
+
+      <div className='container mx-auto px-6 md:px-12 relative z-10'>
+
         <div className='grid grid-cols-1 lg:grid-cols-3 gap-8'>
-          
-          {/* Left Column - Rajesh Kewat Profile */}
+
+          {/* ── Left — Profile Card ── */}
           <div className='lg:col-span-1'>
-            <div className='bg-white rounded-lg shadow-lg overflow-hidden sticky top-8'>
+            <div className='bg-[#0d1829] border border-[#1e6fd9]/20 rounded-xl overflow-hidden sticky top-8 shadow-xl shadow-black/30'>
+
               {/* Profile Image */}
-              <div className='h-80 overflow-hidden'>
-                <img 
-                  src={rajesh} 
+              <div className='h-80 overflow-hidden relative'>
+                <img
+                  src={rajesh}
                   alt="Rajesh Kewat"
                   className='w-full h-full object-cover'
                 />
+                {/* Bottom gradient overlay */}
+                <div className='absolute inset-0 bg-gradient-to-t from-[#0d1829] via-transparent to-transparent'></div>
               </div>
-              
+
+              {/* Top accent bar */}
+              <div className='h-1 w-full bg-gradient-to-r from-[#1e6fd9] to-[#4fc84a]'></div>
+
               {/* Profile Info */}
               <div className='p-6 text-center'>
-                <h2 className='text-3xl font-bold text-gray-900 mb-3'>
+                <h2 className='text-2xl font-bold text-white mb-1'>
                   Rajesh Kewat
                 </h2>
-                <p className='text-gray-600 text-sm leading-relaxed'>
-                  The Founder & CEO of Online Legal India, Mr. Rajesh Kewat actually had the courage to sacrifice his well paid job at Oxford and turn his startup into a multi crore turnover company.
+                <div className='inline-block bg-[#1e6fd9]/10 border border-[#1e6fd9]/30 rounded-full px-3 py-0.5 mb-3'>
+                  <span className='text-[#1e6fd9] text-xs font-semibold tracking-widest uppercase'>Founder & CEO</span>
+                </div>
+                <p className='text-[#7a8fa0] text-sm leading-relaxed'>
+                  The Founder & CEO of Online Legal India, Mr. Rajesh Kewat had the courage to sacrifice his well paid job at Oxford and turn his startup into a multi crore turnover company.
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Right Column - Media Features & Past Experiences */}
-          <div className='lg:col-span-2 flex flex-col gap-8'>
-            
+          {/* ── Right — Media + Experiences ── */}
+          <div className='lg:col-span-2 flex flex-col gap-6'>
+
             {/* Media Features Grid */}
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
               {mediaFeatures.map((feature) => (
-                <div 
+                <div
                   key={feature.id}
-                  className='bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center gap-4'
+                  className='bg-[#0d1829] border border-[#1e6fd9]/15 rounded-xl p-5
+                             hover:border-[#1e6fd9]/40 hover:shadow-lg hover:shadow-[#1e6fd9]/10
+                             transition-all duration-300 flex flex-col items-center text-center gap-4 group'
                 >
                   {/* Media Logo */}
-                  <div className='h-16 flex items-center justify-center'>
-                    <img 
-                      src={feature.logo} 
+                  <div className='h-14 flex items-center justify-center'>
+                    <img
+                      src={feature.logo}
                       alt="Media Logo"
-                      className='max-h-12 object-contain'
+                      className='max-h-10 object-contain opacity-70 group-hover:opacity-100 transition-opacity grayscale group-hover:grayscale-0'
                     />
                   </div>
-                  
-                  {/* Feature Title */}
-                  <p className='text-gray-700 text-sm leading-relaxed'>
+
+                  {/* Divider */}
+                  <div className='w-full h-px bg-gradient-to-r from-transparent via-[#1e6fd9]/30 to-transparent'></div>
+
+                  {/* Title */}
+                  <p className='text-[#7a8fa0] text-sm leading-relaxed group-hover:text-[#b8c4d0] transition-colors'>
                     {feature.title}
                   </p>
                 </div>
               ))}
             </div>
 
-            {/* Past Experiences Section */}
-            <div className='bg-white rounded-lg shadow-md p-8'>
-              <h3 className='text-2xl font-bold text-gray-900 text-center mb-6'>
-                Past Experiences
+            {/* Past Experiences */}
+            <div className='bg-[#0d1829] border border-[#1e6fd9]/15 rounded-xl p-7'>
+              <h3 className='text-xl font-bold text-white text-center mb-2'>
+                Past <span className='text-[#1e6fd9]'>Experiences</span>
               </h3>
-              
-              <div className='flex items-center justify-center gap-8 flex-wrap'>
+              <div className='w-16 h-1 mx-auto rounded-full bg-gradient-to-r from-[#1e6fd9] to-[#4fc84a] mb-6'></div>
+
+              <div className='flex items-center justify-center gap-10 flex-wrap'>
                 {pastExperiences.map((exp) => (
-                  <div 
-                    key={exp.id}
-                    className='h-16 flex items-center justify-center'
-                  >
-                    <img 
-                      src={exp.logo} 
+                  <div key={exp.id} className='h-14 flex items-center justify-center group'>
+                    <img
+                      src={exp.logo}
                       alt={exp.alt}
-                      className='max-h-12 object-contain grayscale hover:grayscale-0 transition-all duration-300'
+                      className='max-h-10 object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300'
                     />
                   </div>
                 ))}
@@ -122,25 +139,31 @@ export default function Networks() {
             </div>
 
           </div>
-
         </div>
 
-        {/* CEO's Desk Quote Section */}
-        <div className='mt-16 bg-white rounded-lg shadow-lg p-8 md:p-12'>
-          <h2 className='text-3xl md:text-4xl font-bold text-gray-900 text-center mb-8'>
-            From CEO's Desk
+        {/* ── CEO's Desk Quote ── */}
+        <div className='mt-12 bg-[#0d1829] border border-[#1e6fd9]/20 rounded-xl p-8 md:p-12 relative overflow-hidden'>
+
+          {/* Decorative quote mark */}
+          <div className='absolute top-4 left-8 text-[120px] leading-none text-[#1e6fd9]/8 font-serif select-none pointer-events-none'>"</div>
+          <div className='absolute bottom-4 right-8 text-[120px] leading-none text-[#4fc84a]/8 font-serif select-none pointer-events-none'>"</div>
+
+          <h2 className='text-3xl md:text-4xl font-bold text-white text-center mb-8'>
+            From <span className='text-[#1e6fd9]'>CEO's</span> Desk
           </h2>
-          
-          <div className='max-w-4xl mx-auto'>
-            <blockquote className='relative'>
-              <p className='text-gray-700 text-lg md:text-xl text-center leading-relaxed italic'>
-                'You don't need MONEY to build your business empire, what you need is big dreams & a SHARP MIND! If you got it, try it.'
-              </p>
-              
-              <div className='mt-6 text-right'>
-                <p className='text-gray-900 font-bold text-lg'>
-                  - Rajesh Kewat
+
+          <div className='max-w-4xl mx-auto relative z-10'>
+            <blockquote>
+              {/* Left blue border quote */}
+              <div className='border-l-4 border-[#1e6fd9] pl-6'>
+                <p className='text-[#b8c4d0] text-lg md:text-xl leading-relaxed italic'>
+                  'You don't need MONEY to build your business empire, what you need is big dreams & a SHARP MIND! If you got it, try it.'
                 </p>
+              </div>
+
+              <div className='mt-6 flex items-center justify-end gap-3'>
+                <div className='h-px flex-1 bg-gradient-to-l from-[#1e6fd9]/40 to-transparent'></div>
+                <p className='text-white font-bold text-base'>— Rajesh Kewat</p>
               </div>
             </blockquote>
           </div>
@@ -149,4 +172,4 @@ export default function Networks() {
       </div>
     </div>
   )
-} 
+}

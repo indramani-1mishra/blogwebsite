@@ -50,7 +50,7 @@ import appstore from "../../assets/images/app-store.webp";
 
   return (
     <>
-      <footer className='w-full bg-gray-100 pt-16 pb-8'>
+      <footer className='w-full bg-[#0a0f1a] pt-16 pb-8 text-white'>
         <div className='container mx-auto px-6 md:px-12'>
           
           {/* Footer Links Grid */}
@@ -58,11 +58,11 @@ import appstore from "../../assets/images/app-store.webp";
             
             {/* Business Registration */}
             <div>
-              <h3 className='text-gray-900 font-bold text-base mb-4'>Business Registration</h3>
+              <h3 className='text-white font-bold text-base mb-4'>Business Registration</h3>
               <ul className='space-y-2'>
                 {footerLinks.businessRegistration.map((link, index) => (
                   <li key={index}>
-                    <a href='#' className='text-gray-600 text-sm hover:text-green-600 transition-colors'>
+                    <a href='#' className='text-white text-sm hover:text-[#1e6fd9] transition-colors'>
                       {link}
                     </a>
                   </li>
@@ -72,11 +72,11 @@ import appstore from "../../assets/images/app-store.webp";
 
             {/* Licenses */}
             <div>
-              <h3 className='text-gray-900 font-bold text-base mb-4'>Licenses</h3>
+              <h3 className='text-white font-bold text-base mb-4'>Licenses</h3>
               <ul className='space-y-2'>
                 {footerLinks.licenses.map((link, index) => (
                   <li key={index}>
-                    <a href='#' className='text-gray-600 text-sm hover:text-green-600 transition-colors'>
+                    <a href='#' className='text-white text-sm hover:text-[#1e6fd9] transition-colors'>
                       {link}
                     </a>
                   </li>
@@ -86,11 +86,11 @@ import appstore from "../../assets/images/app-store.webp";
 
             {/* Registration */}
             <div>
-              <h3 className='text-gray-900 font-bold text-base mb-4'>Registration</h3>
+              <h3 className='text-white font-bold text-base mb-4'>Registration</h3>
               <ul className='space-y-2'>
                 {footerLinks.registration.map((link, index) => (
                   <li key={index}>
-                    <a href='#' className='text-gray-600 text-sm hover:text-green-600 transition-colors'>
+                    <a href='#' className='text-white text-sm hover:text-[#1e6fd9] transition-colors'>
                       {link}
                     </a>
                   </li>
@@ -104,7 +104,7 @@ import appstore from "../../assets/images/app-store.webp";
               <ul className='space-y-2'>
                 {footerLinks.gst.map((link, index) => (
                   <li key={index}>
-                    <a href='#' className='text-gray-600 text-sm hover:text-green-600 transition-colors'>
+                    <a href='#' className='text-white text-sm hover:text-[#1e6fd9] transition-colors'>
                       {link}
                     </a>
                   </li>
@@ -118,7 +118,7 @@ import appstore from "../../assets/images/app-store.webp";
               <ul className='space-y-2'>
                 {footerLinks.accountingTax.map((link, index) => (
                   <li key={index}>
-                    <a href='#' className='text-gray-600 text-sm hover:text-green-600 transition-colors'>
+                    <a href='#' className='text-white text-sm hover:text-[#1e6fd9] transition-colors'>
                       {link}
                     </a>
                   </li>
@@ -130,15 +130,15 @@ import appstore from "../../assets/images/app-store.webp";
 
           {/* Company Info */}
           <div className='border-t border-gray-300 pt-8 mb-8'>
-            <p className='text-gray-600 text-sm leading-relaxed mb-4'>
+            <p className='text-white text-sm leading-relaxed mb-4'>
               Online Legal India is a part of FastInfo Legal Services Pvt Ltd. Which is registered under the Companies Act, 2013.
             </p>
           </div>
 
           {/* Website Disclaimer */}
           <div className='mb-8'>
-            <h4 className='text-gray-900 font-bold text-sm mb-3'>Website Disclaimer :</h4>
-            <p className='text-gray-600 text-sm leading-relaxed'>
+            <h4 className='text-white font-bold text-sm mb-3'>Website Disclaimer :</h4>
+            <p className='text-gray-300 text-sm leading-relaxed'>
               This website is privately operated and not affiliated with any government entity. We do not represent or are affiliated with, endorsed by, or in any way connected to any government body or department. The form provided is not for official registration purposes; rather, it's designed to gather information from our clients to help us better understand their business or needs. By continuing to use this website, you acknowledge that we are a private company. We offer assistance based on customer requests, and the fees collected on this website are charged as a platform fee. We reserve the right to outsource matters as deemed necessary. We are in the process of giving our brand a new name. Stay tuned for updates. This platform does not offer legal services, nor does it provide legal advice or representation. Do you require legal assistance? We strongly recommend consulting with a qualified lawyer or law firm.
             </p>
           </div>

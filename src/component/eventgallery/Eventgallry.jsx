@@ -23,15 +23,15 @@ export default function Eventgallry() {
   ];
 
   return (
-    <div className='w-full bg-white py-16'>
+    <div className='w-full bg-[#0a0f1a] py-16'>
       <div className='container mx-auto px-6 md:px-12'>
         
         
         <div className='text-center mb-12'>
-          <h2 className='text-4xl md:text-5xl font-bold text-gray-900 mb-2'>
+          <h2 className='text-4xl md:text-5xl font-bold text-white mb-2'>
             Events Gallery
           </h2>
-          <div className='w-20 h-1 bg-green-500 mx-auto'></div>
+          <div className='w-20 h-1 bg-[#1e6fd9] mx-auto'></div>
         </div>
 
        
