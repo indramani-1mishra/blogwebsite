@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { FaBriefcase, FaClipboardCheck, FaExchangeAlt } from 'react-icons/fa';
 import ShareContext from '../../context/shareContext';
+import { Link } from 'react-router-dom';
 
 export default function CompanyRegistrationDropdown() {
 
@@ -84,22 +85,27 @@ export default function CompanyRegistrationDropdown() {
 
                   {/* Items */}
                   <ul className='space-y-0.5'>
-                    {dropdownData[key].map((item, index) => (
-                      <li key={index}>
-                        <a
-                          href='#'
-                          className='flex items-center gap-2 text-sm text-[#7a8fa0]
-                                     hover:text-white hover:bg-[#1e6fd9]/10
-                                     px-3 py-2 rounded-lg transition-all group'
-                        >
-                          <span
-                            className='w-1 h-1 rounded-full flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity'
-                            style={{ background: accent }}
-                          />
-                          {item}
-                        </a>
-                      </li>
-                    ))}
+                    {dropdownData[key].map((item, index) => {
+                      // Generate slug from item name (e.g., "Private Limited Company" -> "private-limited-company")
+                      const slug = item.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+                      return (
+                        <li key={index}>
+                          <Link
+                            to={`/registration/${key}/${slug}`}
+                            onClick={() => setIsOpen(false)}
+                            className='flex items-center gap-2 text-sm text-[#7a8fa0]
+                                      hover:text-white hover:bg-[#1e6fd9]/10
+                                      px-3 py-2 rounded-lg transition-all group'
+                          >
+                            <span
+                              className='w-1 h-1 rounded-full flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity'
+                              style={{ background: accent }}
+                            />
+                            {item}
+                          </Link>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               ))}

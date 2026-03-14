@@ -29,7 +29,7 @@ export default function Header() {
           /* ── Primary Nav ── */
           <nav className='hidden lg:flex flex-row items-center gap-0'>
 
-            <Link to="#" className='flex items-center gap-1 px-3 py-2 text-[14px] font-medium text-[#b8c4d0] border-r border-[#1e6fd9]/30 hover:text-[#1e6fd9] transition-colors'>
+            <Link to="/info/trademark" className='flex items-center gap-1 px-3 py-2 text-[14px] font-medium text-[#b8c4d0] border-r border-[#1e6fd9]/30 hover:text-[#1e6fd9] transition-colors'>
               <span>Trademark</span>
               <AiFillCaretDown className='text-xs mt-0.5' />
             </Link>
@@ -41,7 +41,7 @@ export default function Header() {
               onMouseLeave={() => setIsOpen(false)}
             >
               <Link
-                to="#"
+                to="/info/company-registration"
                 className='flex items-center gap-1 px-3 py-2 text-[14px] font-medium text-[#b8c4d0] border-r border-[#1e6fd9]/30 hover:text-[#1e6fd9] transition-colors'
               >
                 <span>Company Registration</span>
@@ -55,29 +55,29 @@ export default function Header() {
               )}
             </div>
 
-            <Link to="#" className='px-3 py-2 text-[14px] font-medium text-[#b8c4d0] border-r border-[#1e6fd9]/30 hover:text-[#1e6fd9] transition-colors'>
+            <Link to="/info/iso" className='px-3 py-2 text-[14px] font-medium text-[#b8c4d0] border-r border-[#1e6fd9]/30 hover:text-[#1e6fd9] transition-colors'>
               ISO
             </Link>
 
-            <Link to="#" className='flex items-center gap-1 px-3 py-2 text-[14px] font-medium text-[#b8c4d0] border-r border-[#1e6fd9]/30 hover:text-[#1e6fd9] transition-colors'>
+            <Link to="/info/licenses" className='flex items-center gap-1 px-3 py-2 text-[14px] font-medium text-[#b8c4d0] border-r border-[#1e6fd9]/30 hover:text-[#1e6fd9] transition-colors'>
               <span>Licenses</span>
               <AiFillCaretDown className='text-xs mt-0.5' />
             </Link>
 
-            <Link to="#" className='flex items-center gap-1 px-3 py-2 text-[14px] font-medium text-[#b8c4d0] border-r border-[#1e6fd9]/30 hover:text-[#1e6fd9] transition-colors'>
+            <Link to="/info/tax-compliance" className='flex items-center gap-1 px-3 py-2 text-[14px] font-medium text-[#b8c4d0] border-r border-[#1e6fd9]/30 hover:text-[#1e6fd9] transition-colors'>
               <span>Tax & Compliance</span>
               <AiFillCaretDown className='text-xs mt-0.5' />
             </Link>
 
-            <Link to="#" className='px-3 py-2 text-[14px] font-medium text-[#b8c4d0] border-r border-[#1e6fd9]/30 hover:text-[#1e6fd9] transition-colors'>
+            <Link to="/info/consumer-dispute" className='px-3 py-2 text-[14px] font-medium text-[#b8c4d0] border-r border-[#1e6fd9]/30 hover:text-[#1e6fd9] transition-colors'>
               Consumer Dispute
             </Link>
 
-            <Link to="#" className='px-3 py-2 text-[14px] font-medium text-[#b8c4d0] border-r border-[#1e6fd9]/30 hover:text-[#1e6fd9] transition-colors'>
+            <Link to="/info/legal-dispute" className='px-3 py-2 text-[14px] font-medium text-[#b8c4d0] border-r border-[#1e6fd9]/30 hover:text-[#1e6fd9] transition-colors'>
               Legal Dispute
             </Link>
 
-            <Link to="#" className='px-3 py-2 text-[14px] font-medium text-[#b8c4d0] border-r border-[#1e6fd9]/30 hover:text-[#1e6fd9] transition-colors'>
+            <Link to="/info/cxo" className='px-3 py-2 text-[14px] font-medium text-[#b8c4d0] border-r border-[#1e6fd9]/30 hover:text-[#1e6fd9] transition-colors'>
               CXO
             </Link>
 
@@ -90,13 +90,18 @@ export default function Header() {
         ) : (
           /* ── Secondary Nav ── */
           <nav className='hidden lg:flex flex-row items-center gap-6 capitalize'>
-            {['Home', 'Careers', 'Contact', 'Blogs'].map((item) => (
+            {[
+              { name: 'Home', path: '/' },
+              { name: 'Careers', path: '/info/careers' },
+              { name: 'Contact', path: '/info/contact' },
+              { name: 'Blogs', path: '/info/blogs' }
+            ].map((item) => (
               <Link
-                key={item}
-                to="#"
+                key={item.name}
+                to={item.path}
                 className='text-[14px] font-medium text-[#b8c4d0] hover:text-[#4fc84a] transition-colors'
               >
-                {item}
+                {item.name}
               </Link>
             ))}
           </nav>
