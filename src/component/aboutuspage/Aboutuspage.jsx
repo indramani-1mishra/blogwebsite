@@ -32,10 +32,10 @@ export default function Aboutuspage() {
             {/* Text */}
             <div className='flex flex-col gap-4 text-[#7a8fa0] text-base leading-relaxed'>
               <p>
-                Online Legal India is a subsidiary of FastInfo Legal Services Pvt. Ltd., registered under the Companies Act, 2013.
+                Vectra Tax Pro is a professional consultancy firm dedicated to simplifying the complex world of business compliance and legal registrations. We serve as a one-stop solution for entrepreneurs and established businesses looking to navigate the regulatory landscape of India with ease and precision
               </p>
               <p>
-                With the facility of a proficient team of professionals, we provide a wide variety of services. We provide top-notch solutions for individuals, business owners, company proprietors, corporate bodies, and others for their registration and related issues they face in their everyday lives.
+                Our mission is to empower businesses by handling the "paperwork," allowing founders to focus entirely on growth and innovation. With a team of experts well-versed in corporate law and taxation, we ensure that your business remains 100% compliant and legally sound.
               </p>
             </div>
 
@@ -43,8 +43,8 @@ export default function Aboutuspage() {
             <div className='grid grid-cols-3 gap-4 mt-2'>
               {[
                 { value: '10K+', label: 'Clients Served' },
-                { value: '50+',  label: 'Expert Team'    },
-                { value: '15+',  label: 'Years Experience'},
+                { value: '50+', label: 'Expert Team' },
+                { value: '15+', label: 'Years Experience' },
               ].map(({ value, label }) => (
                 <div key={label} className='bg-[#0d1829] border border-[#1e6fd9]/15 rounded-xl p-4 text-center'>
                   <div className='text-2xl font-bold text-[#1e6fd9]'>{value}</div>

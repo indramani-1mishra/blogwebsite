@@ -2,10 +2,10 @@ import trademark from "../assets/images/trademark-registration.webp";
 import isoregistration from "../assets/images/virtual-cxo-service-all-service.webp";
 import gst from "../assets/images/GST-registration.webp";
 import componyreg from "../assets/images/company-registration.webp";
-import importexport from "../assets/images/import-export-code.webp";
+import importexport from "../assets/images/download.webp";
 import bigcorprate from "../assets/images/big-corporate-services-image.webp";
 import fssai from "../assets/images/fssai-registration.webp";
-import virtualcxoservice from "../assets/images/virtual-cxo-service-all-service.webp";
+import virtualcxoservice from "../assets/images/dispute.webp";
 
 export const servicesData = [
   {
