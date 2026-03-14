@@ -1,73 +1,10 @@
 import React from 'react'
-import bigcorprate from "../../assets/images/big-corporate-services-image.webp";
-import componyreg from "../../assets/images/company-registration.webp";
-import corporatelogo from "../../assets/images/big-corporate-services-image.webp";
-import gst from "../../assets/images/GST-registration.webp";
-import fssai from "../../assets/images/fssai-registration.webp";
-import importexport from "../../assets/images/import-export-code.webp";
-import trademark from "../../assets/images/trademark-registration.webp";
-import virtualcxoservice from "../../assets/images/virtual-cxo-service-all-service.webp";
-import isoregistration from "../../assets/images/virtual-cxo-service-all-service.webp";
+import { Link } from 'react-router-dom';
+import { servicesData } from '../../data/servicesData';
 
 export default function Ourservice() {
-  const services = [
-    {
-      id: 1,
-      image: trademark,
-      title: "Trademark Registration Online",
-      description: "Register your trademark (brand name, logo, slogan, icon, etc.) from anywhere in India through our online registration assistance services.",
-      link: "#"
-    },
-    {
-      id: 2,
-      image: isoregistration,
-      title: "ISO Registration",
-      description: "Get your ISO Certification support from anywhere in India and enhance your business credibility with globally recognized standards.",
-      link: "#"
-    },
-    {
-      id: 3,
-      image: gst,
-      title: "GST Registration Services",
-      description: "Online Legal India supports you to meet GST compliance for your business.",
-      link: "#"
-    },
-    {
-      id: 4,
-      image: componyreg,
-      title: "Company Registration",
-      description: "We have professionals to support everything online on the ROC portal and relieve you of any burden. Click to learn.",
-      link: "#"
-    },
-    {
-      id: 5,
-      image: importexport,
-      title: "Import Export Code",
-      description: "Get your Import Export Code registration and start your international trade business with our expert assistance.",
-      link: "#"
-    },
-    {
-      id: 6,
-      image: bigcorprate,
-      title: "Corporate Services",
-      description: "Comprehensive corporate compliance and legal services for your business growth and success.",
-      link: "#"
-    },
-    {
-      id: 7,
-      image: fssai,
-      title: "FSSAI Registration",
-      description: "Get your food business legally registered with FSSAI certification and ensure compliance with food safety standards.",
-      link: "#"
-    },
-    {
-      id: 8,
-      image: virtualcxoservice,
-      title: "Online Dispute Resolution",
-      description: "Resolve your legal disputes online with our expert legal professionals and get quick solutions.",
-      link: "#"
-    }
-  ];
+
+
 
   return (
     <div className='w-full bg-[#0a0f1a] py-16 relative overflow-hidden'>
@@ -93,7 +30,7 @@ export default function Ourservice() {
 
         {/* Services Grid */}
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:w-[90%] md:m-auto'>
-          {services.map((service, index) => (
+          {servicesData.map((service, index) => (
             <div
               key={service.id}
               className='group bg-[#0d1829] border border-[#1e6fd9]/15 rounded-xl overflow-hidden hover:border-[#1e6fd9]/50 hover:shadow-xl hover:shadow-[#1e6fd9]/10 transition-all duration-300 transform hover:-translate-y-2'
@@ -128,8 +65,8 @@ export default function Ourservice() {
                 <div className='h-px bg-gradient-to-r from-[#1e6fd9]/30 to-transparent mt-1'></div>
 
                 {/* CTA */}
-                <a
-                  href={service.link}
+                <Link
+                  to={`/service/${service.slug}`}
                   className='inline-flex items-center gap-2 text-[#4fc84a] font-semibold text-sm hover:gap-3 transition-all group/link'
                 >
                   <span className='group-hover/link:text-white transition-colors'>Learn More</span>
@@ -141,7 +78,7 @@ export default function Ourservice() {
                   >
                     <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M9 5l7 7-7 7' />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
           ))}
