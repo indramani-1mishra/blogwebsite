@@ -5,12 +5,12 @@ import { FaCheckCircle, FaArrowLeft } from 'react-icons/fa';
 
 export default function HeaderDetail() {
   const { slug } = useParams();
-  
+
   // Find the page by slug
   const pageInfo = headerData.find(s => s.slug === slug);
 
   useEffect(() => {
-    // Scroll to top on mount
+    // Scroll to top on mount/*  */
     window.scrollTo(0, 0);
   }, [slug]);
 
@@ -32,9 +32,9 @@ export default function HeaderDetail() {
       <div className='relative w-full h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden'>
         {/* Background Image */}
         <div className='absolute inset-0 z-0'>
-          <img 
-            src={pageInfo.heroImage} 
-            alt={pageInfo.title} 
+          <img
+            src={pageInfo.heroImage}
+            alt={pageInfo.title}
             className='w-full h-full object-cover opacity-30 transform hover:scale-105 transition-transform duration-[10s]'
           />
           <div className='absolute inset-0 bg-gradient-to-t from-[#0a0f1a] via-[#0a0f1a]/60 to-transparent'></div>
@@ -47,12 +47,12 @@ export default function HeaderDetail() {
             <FaArrowLeft className='group-hover:-translate-x-1 transition-transform' />
             <span>Home</span>
           </Link>
-          
+
           <div className='inline-flex items-center gap-2 bg-[#1e6fd9]/10 border border-[#1e6fd9]/30 rounded-full px-4 py-1 mb-4 shadow-[0_0_15px_rgba(30,111,217,0.3)]'>
             <div className='w-2 h-2 bg-[#1e6fd9] rounded-full animate-pulse'></div>
             <span className='text-[#b8c4d0] text-xs font-semibold tracking-widest uppercase'>Corporate Info</span>
           </div>
-          
+
           <h1 className='text-4xl md:text-6xl font-extrabold text-white mb-6 drop-shadow-lg max-w-3xl leading-tight'>
             {pageInfo.title}
           </h1>
@@ -65,7 +65,7 @@ export default function HeaderDetail() {
       {/* Main Content Section */}
       <div className='container mx-auto px-6 md:px-12 py-16'>
         <div className='flex flex-col lg:flex-row gap-12'>
-          
+
           {/* Left Column: Overview and Benefits */}
           <div className='lg:w-2/3 flex flex-col gap-12'>
             {/* Overview */}
@@ -117,16 +117,16 @@ export default function HeaderDetail() {
             {/* Visual Block */}
             <div className='rounded-xl overflow-hidden border border-[#1e6fd9]/20 shadow-lg shadow-[#1e6fd9]/5 group relative'>
               <div className="absolute inset-0 bg-[#1e6fd9]/10 group-hover:bg-transparent transition-colors z-10 duration-500"></div>
-              <img 
-                src={pageInfo.image} 
-                alt={`${pageInfo.title} illustration`} 
-                className='w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700' 
+              <img
+                src={pageInfo.image}
+                alt={`${pageInfo.title} illustration`}
+                className='w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700'
               />
             </div>
 
             {/* CTA Box */}
             <div className='bg-gradient-to-br from-[#1e6fd9] via-[#1557b0] to-[#0d1829] rounded-xl p-8 text-center shadow-[0_10px_30px_rgba(30,111,217,0.3)] relative overflow-hidden'>
-               <div className='absolute -bottom-10 -right-10 w-32 h-32 bg-white opacity-5 rounded-full blur-2xl'></div>
+              <div className='absolute -bottom-10 -right-10 w-32 h-32 bg-white opacity-5 rounded-full blur-2xl'></div>
               <h3 className='text-2xl font-bold text-white mb-4'>Need Expert Assistance?</h3>
               <p className='text-[#e0e7ff] mb-6'>
                 Our dedicated professionals are available to guide you through {pageInfo.title.toLowerCase()} completely.

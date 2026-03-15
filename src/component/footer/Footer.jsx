@@ -3,66 +3,69 @@ import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaEnvelope, FaYoutub
 import googleplay from "../../assets/images/google-play.webp";
 import appstore from "../../assets/images/app-store.webp";
 
- export const Footer = () => {
+export const Footer = () => {
   const footerLinks = {
     businessRegistration: [
       "Private Limited Company",
       "Limited Liability Partnership",
       "One Person Company",
-      "Public limited Company",
-      "Section 8 Company"
+      "Section 8 Company",
+      "Nidhi Company"
     ],
     licenses: [
-      "FSSAI [Food License]",
-      "FSSAI Renewal",
-      "IEC [Import/Export Code]",
-      "IEC Certificate Modification",
-      "BIS Certificate"
+      "FSSAI Registration",
+      "Import Export Code (IEC)",
+      "Shop & Establishment",
+      "Trade License",
+      "MSME / Udyam"
     ],
-    registration: [
-      "TM Registration",
-      "TM Objection",
-      "TM Renewal",
+    intellectualProperty: [
+      "Trademark Registration",
       "Copyright Registration",
-      "ISO Registration"
+      "Patent & Design",
+      "Trademark Renewal",
+      "Logo Registration"
     ],
-    gst: [
+    taxCompliances: [
       "GST Registration",
-      "GST Filing",
-      "GST Modification",
-      "GST Cancellation"
+      "GST Return Filing",
+      "TDS Return Filing",
+      "Income Tax Return",
+      "PF & ESIC Registration"
     ],
-    accountingTax: [
-      "PF-ESIC Registration",
-      "PF-ESIC Return Filing",
-      "Online Bookkeeping"
+    certifications: [
+      "ISO 9001:2015",
+      "ISO 14001:2015",
+      "ISO 27001 ISMS",
+      "CE Mark Certification",
+      "Startup India Registration"
     ]
   };
 
   const quickLinks = [
-    "Careers",
+    "About Us",
     "Contact Us",
-    "Blogs",
-    "News",
-    "Press Release",
-    "Event"
+    "Privacy Policy",
+    "Terms of Service",
+    "Refund Policy",
+    "FAQs"
   ];
 
   return (
     <>
       <footer className='w-full bg-[#0a0f1a] pt-16 pb-8 text-white'>
         <div className='container mx-auto px-6 md:px-12'>
-          
+
           {/* Footer Links Grid */}
           <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-12'>
-            
+
             {/* Business Registration */}
             <div>
               <h3 className='text-white font-bold text-base mb-4'>Business Registration</h3>
               <ul className='space-y-2'>
                 {footerLinks.businessRegistration.map((link, index) => (
                   <li key={index}>
-                    <a href='#' className='text-white text-sm hover:text-[#1e6fd9] transition-colors'>
+                    <a href='#' className='text-gray-300 text-sm hover:text-[#1e6fd9] transition-colors'>
                       {link}
                     </a>
                   </li>
@@ -72,11 +75,11 @@ import appstore from "../../assets/images/app-store.webp";
 
             {/* Licenses */}
             <div>
-              <h3 className='text-white font-bold text-base mb-4'>Licenses</h3>
+              <h3 className='text-white font-bold text-base mb-4'>Licenses & Approvals</h3>
               <ul className='space-y-2'>
                 {footerLinks.licenses.map((link, index) => (
                   <li key={index}>
-                    <a href='#' className='text-white text-sm hover:text-[#1e6fd9] transition-colors'>
+                    <a href='#' className='text-gray-300 text-sm hover:text-[#1e6fd9] transition-colors'>
                       {link}
                     </a>
                   </li>
@@ -84,13 +87,13 @@ import appstore from "../../assets/images/app-store.webp";
               </ul>
             </div>
 
-            {/* Registration */}
+            {/* Intellectual Property */}
             <div>
-              <h3 className='text-white font-bold text-base mb-4'>Registration</h3>
+              <h3 className='text-white font-bold text-base mb-4'>Intellectual Property</h3>
               <ul className='space-y-2'>
-                {footerLinks.registration.map((link, index) => (
+                {footerLinks.intellectualProperty.map((link, index) => (
                   <li key={index}>
-                    <a href='#' className='text-white text-sm hover:text-[#1e6fd9] transition-colors'>
+                    <a href='#' className='text-gray-300 text-sm hover:text-[#1e6fd9] transition-colors'>
                       {link}
                     </a>
                   </li>
@@ -98,13 +101,13 @@ import appstore from "../../assets/images/app-store.webp";
               </ul>
             </div>
 
-            {/* GST */}
+            {/* Tax */}
             <div>
-              <h3 className='text-gray-900 font-bold text-base mb-4'>GST</h3>
+              <h3 className='text-white font-bold text-base mb-4'>Tax & Compliances</h3>
               <ul className='space-y-2'>
-                {footerLinks.gst.map((link, index) => (
+                {footerLinks.taxCompliances.map((link, index) => (
                   <li key={index}>
-                    <a href='#' className='text-white text-sm hover:text-[#1e6fd9] transition-colors'>
+                    <a href='#' className='text-gray-300 text-sm hover:text-[#1e6fd9] transition-colors'>
                       {link}
                     </a>
                   </li>
@@ -112,13 +115,13 @@ import appstore from "../../assets/images/app-store.webp";
               </ul>
             </div>
 
-            {/* Accounting & Tax */}
+            {/* Certifications */}
             <div>
-              <h3 className='text-gray-900 font-bold text-base mb-4'>Accounting & Tax</h3>
+              <h3 className='text-white font-bold text-base mb-4'>Certifications</h3>
               <ul className='space-y-2'>
-                {footerLinks.accountingTax.map((link, index) => (
+                {footerLinks.certifications.map((link, index) => (
                   <li key={index}>
-                    <a href='#' className='text-white text-sm hover:text-[#1e6fd9] transition-colors'>
+                    <a href='#' className='text-gray-300 text-sm hover:text-[#1e6fd9] transition-colors'>
                       {link}
                     </a>
                   </li>
@@ -129,23 +132,34 @@ import appstore from "../../assets/images/app-store.webp";
           </div>
 
           {/* Company Info */}
-          <div className='border-t border-gray-300 pt-8 mb-8'>
-            <p className='text-white text-sm leading-relaxed mb-4'>
-              Online Legal India is a part of FastInfo Legal Services Pvt Ltd. Which is registered under the Companies Act, 2013.
-            </p>
+          <div className='border-t border-gray-800 pt-8 mb-8 mt-12'>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-start'>
+              <div>
+                <h4 className='text-white font-bold text-lg mb-3'>About Our Company</h4>
+                <p className='text-gray-400 text-sm leading-relaxed'>
+                  We are a premier business compliance and legal advisory platform, dedicated to empowering entrepreneurs and growing enterprises. Our AI-driven platform and expert professionals work in synergy to simplify the complex landscape of registrations, tax filings, and legal compliances. We provide transparent, tech-driven, and seamless solutions tailored to your business needs, enabling you to focus entirely on scaling your vision while we handle the paperwork.
+                </p>
+              </div>
+              <div>
+                <h4 className='text-white font-bold text-lg mb-3'>Our Vision</h4>
+                <p className='text-gray-400 text-sm leading-relaxed'>
+                  To be the most trusted legal and financial services partner for businesses worldwide. We strive to foster innovation by accelerating the pace of administrative processes and removing the bureaucratic hurdles of company formation and management. We deliver excellence, absolute reliability, and unwavering peace of mind at every step of your entrepreneurial journey.
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Website Disclaimer */}
-          <div className='mb-8'>
-            <h4 className='text-white font-bold text-sm mb-3'>Website Disclaimer :</h4>
-            <p className='text-gray-300 text-sm leading-relaxed'>
-              This website is privately operated and not affiliated with any government entity. We do not represent or are affiliated with, endorsed by, or in any way connected to any government body or department. The form provided is not for official registration purposes; rather, it's designed to gather information from our clients to help us better understand their business or needs. By continuing to use this website, you acknowledge that we are a private company. We offer assistance based on customer requests, and the fees collected on this website are charged as a platform fee. We reserve the right to outsource matters as deemed necessary. We are in the process of giving our brand a new name. Stay tuned for updates. This platform does not offer legal services, nor does it provide legal advice or representation. Do you require legal assistance? We strongly recommend consulting with a qualified lawyer or law firm.
+          <div className='mb-8 bg-[#111827]/50 p-6 rounded-lg border border-gray-800/60'>
+            <h4 className='text-gray-300 font-bold text-xs uppercase tracking-wider mb-3'>Legal Disclaimer :</h4>
+            <p className='text-gray-500 text-xs leading-relaxed'>
+              This platform is privately owned and operated as a B2B consultancy platform. We are an independent firm facilitating business registrations, accounting, and compliance services. We are not a government entity, nor are we endorsed by or affiliated with any government agency/department. The forms available on this site are designed to gather necessary information tailored to our clients' needs and do not substitute for official government statutory applications. The fees collected reflect our professional advisory, technology platform utilization, and expert support. While we utilize advanced AI optimizations and rigorous expert reviews to ensure the highest degree of accuracy, we do not function as a traditional law firm. Information provided here does not constitute formal legal counsel. For dedicated legal representation or specific legal proceedings, we strongly recommend consulting an independent practicing advocate.
             </p>
           </div>
 
           {/* Social Media & App Links */}
           <div className='flex flex-col md:flex-row justify-between items-start md:items-center gap-8 border-t border-gray-300 pt-8'>
-            
+
             {/* Left: Social Media */}
             <div>
               <h4 className='text-gray-900 font-semibold text-sm mb-4'>Follow Us</h4>
@@ -185,21 +199,21 @@ import appstore from "../../assets/images/app-store.webp";
             <div className='flex flex-col gap-4'>
               <div className='flex flex-wrap gap-4 justify-end'>
                 {quickLinks.map((link, index) => (
-                  <a 
+                  <a
                     key={index}
-                    href='#' 
+                    href='#'
                     className='text-gray-600 text-sm hover:text-green-600 transition-colors'
                   >
                     {link}
                   </a>
                 ))}
               </div>
-              
+
               <div className='text-right'>
                 <p className='text-gray-600 text-sm'>
-                  For any grievance mail to: 
+                  For any grievance mail to:
                   <a href='mailto:complain@fastinfo.com' className='text-blue-600 hover:underline ml-1'>
-                    complain@fastinfo.com
+                    info@vectrataxprocompany.com
                   </a>
                 </p>
               </div>
