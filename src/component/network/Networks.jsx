@@ -12,27 +12,27 @@ export default function Networks() {
     {
       id: 1,
       logo: zeenews,
-      title: "Meet Rajesh Kewat, The Small Town Entrepreneur Behind Online Legal India's Success"
+      title: "Meet Our CEO, The Visionary Entrepreneur Behind Vectra Tax Pro Company's Success"
     },
     {
       id: 2,
       logo: Tedx,
-      title: "From Rs. 2000 Salary to Multi-Crore Turnover Company | Rajesh Kewat | TEDxPradhikaran."
+      title: "Building a Multi-Crore Business from the Ground Up | Our CEO | TEDx"
     },
     {
       id: 3,
       logo: footerforbase,
-      title: "Mr. Rajesh Kewat getting featured in the special edition of Forbes India Magazine - Showstoppers 2022-23"
+      title: "Our CEO featured in the special edition of Forbes India Magazine - Showstoppers"
     },
     {
       id: 4,
       logo: Asiaone,
-      title: "Rajesh Kewat, the MD of FastInfo Legal Services Pvt Ltd, owns a movie-like story; a man who lost everything for his love & attained great success within just 500 days with his innovative business."
+      title: "The CEO of Vectra Tax Pro Company owns an inspiring story of attaining massive success through innovative business strategies."
     },
     {
       id: 5,
       logo: midday9999,
-      title: "Rajesh Kewat Conferred with Businessman of the Year Award at Brands Impact NFA 2022."
+      title: "Our CEO Conferred with Business Leader of the Year Award at Brands Impact."
     }
   ];
 
@@ -61,7 +61,7 @@ export default function Networks() {
               <div className='h-80 overflow-hidden relative'>
                 <img
                   src={rajesh}
-                  alt="Rajesh Kewat"
+                  alt="Our CEO"
                   className='w-full h-full object-cover'
                 />
                 {/* Bottom gradient overlay */}
@@ -74,13 +74,13 @@ export default function Networks() {
               {/* Profile Info */}
               <div className='p-6 text-center'>
                 <h2 className='text-2xl font-bold text-white mb-1'>
-                  Rajesh Kewat
+                  Our CEO
                 </h2>
                 <div className='inline-block bg-[#1e6fd9]/10 border border-[#1e6fd9]/30 rounded-full px-3 py-0.5 mb-3'>
                   <span className='text-[#1e6fd9] text-xs font-semibold tracking-widest uppercase'>Founder & CEO</span>
                 </div>
                 <p className='text-[#7a8fa0] text-sm leading-relaxed'>
-                  The Founder & CEO of Online Legal India, Mr. Rajesh Kewat had the courage to sacrifice his well paid job at Oxford and turn his startup into a multi crore turnover company.
+                  The Founder & CEO of Vectra Tax Pro Company leads with a visionary mindset, driving the firm to provide seamless and trusted compliance services to businesses across the country.
                 </p>
               </div>
             </div>
@@ -163,7 +163,7 @@ export default function Networks() {
 
               <div className='mt-6 flex items-center justify-end gap-3'>
                 <div className='h-px flex-1 bg-gradient-to-l from-[#1e6fd9]/40 to-transparent'></div>
-                <p className='text-white font-bold text-base'>— Rajesh Kewat</p>
+                <p className='text-white font-bold text-base'>— CEO</p>
               </div>
             </blockquote>
           </div>
