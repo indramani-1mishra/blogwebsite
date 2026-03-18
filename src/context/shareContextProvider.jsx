@@ -2,11 +2,11 @@ import ShareContext from "./shareContext";
 import { useState } from "react";
 
 export const ShareContextProvider = ({ children }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
   return (
     <>
-      <ShareContext.Provider value={{ isOpen, setIsOpen }}>
+      <ShareContext.Provider value={{ activeDropdown, setActiveDropdown }}>
         {children}
       </ShareContext.Provider>
     </>

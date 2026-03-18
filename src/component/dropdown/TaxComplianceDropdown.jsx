@@ -1,54 +1,50 @@
 import React, { useContext } from 'react'
-import { FaBriefcase, FaClipboardCheck, FaExchangeAlt } from 'react-icons/fa';
+import { FaFileInvoiceDollar, FaCalendarCheck, FaPeopleArrows } from 'react-icons/fa';
 import ShareContext from '../../context/shareContext';
 import { Link } from 'react-router-dom';
 
-export default function CompanyRegistrationDropdown() {
+export default function TaxComplianceDropdown() {
 
   const { activeDropdown, setActiveDropdown } = useContext(ShareContext);
 
   const dropdownData = {
-    incorporation: [
-      "Private Limited Company",
-      "LLP Registration",
-      "One Person Company",
-      "Public Limited Company",
-      "Section 8 Company",
-      "Business Registration License",
-      "Nidhi Company Registration",
-      "Indian Subsidiary Registration"
+    gst: [
+      "GST Registration",
+      "GST Return Filing",
+      "GST Nil Return Filing",
+      "GST Modification",
+      "GSTR-9 Annual Filing",
+      "GST LUT Filing",
+      "GST E-Way Bill"
     ],
-    compliance: [
-      "Director DIN e KYC Update",
-      "Appointment of Director",
-      "Removal of Director",
-      "Pvt. Ltd. Winding up",
-      "LLP Winding Up",
-      "Increase Authorized Capital",
-      "Registered Office Change",
-      "Change Company Name",
+    annual: [
+      "Annual Compliance & Filing",
+      "Annual Compliance & Bookkeeping",
+      "Tax Planning & Consultancy",
+      "Tax & Compliance",
+      "Online Bookkeeping",
+      "12A-80G-CSR",
+      "Project Report",
+      "DPT-3 Filing",
+      "NGO DARPAN Registration"
     ],
-    conversion: [
-      "OPC to PVT. Conversion",
-      "PVT. to Public Ltd Conversion",
-      "LLP to PVT Conversion",
-      "Sec-8 Winding Up",
-      "Nidhi Winding Up",
-      "Indian Subsidiary Windup"
+    payroll: [
+      "PF-ESIC Registration",
+      "PF-ESIC Return Filing"
     ]
   };
 
   const columns = [
-    { key: 'incorporation', label: 'Incorporation', icon: <FaBriefcase />,      accent: '#1e6fd9' },
-    { key: 'compliance',    label: 'Compliance',    icon: <FaClipboardCheck />, accent: '#4fc84a' },
-    { key: 'conversion',    label: 'Conversion',    icon: <FaExchangeAlt />,    accent: '#1e6fd9' },
+    { key: 'gst', label: 'GST', icon: <FaFileInvoiceDollar />, accent: '#4fc84a' },
+    { key: 'annual', label: 'Annual Compliances & Others', icon: <FaCalendarCheck />, accent: '#4fc84a' },
+    { key: 'payroll', label: 'Payroll Compliance', icon: <FaPeopleArrows />, accent: '#4fc84a' },
   ];
 
   return (
     <div className='relative inline-block'>
 
       {/* Dropdown Menu */}
-      {activeDropdown === 'company' && (
+      {activeDropdown === 'tax' && (
         <>
           {/* Backdrop */}
           <div
@@ -86,12 +82,11 @@ export default function CompanyRegistrationDropdown() {
                   {/* Items */}
                   <ul className='space-y-0.5'>
                     {dropdownData[key].map((item, index) => {
-                      // Generate slug from item name (e.g., "Private Limited Company" -> "private-limited-company")
                       const slug = item.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
                       return (
                         <li key={index}>
                           <Link
-                            to={`/registration/${key}/${slug}`}
+                            to={`/info/tax-compliance/${slug}`}
                             onClick={() => setActiveDropdown(null)}
                             className='flex items-center gap-2 text-sm text-[#7a8fa0]
                                       hover:text-white hover:bg-[#1e6fd9]/10
@@ -110,7 +105,7 @@ export default function CompanyRegistrationDropdown() {
                 </div>
               ))}
 
-              {/* Decorative bg chart bars — VectraTax feel */}
+              {/* Decorative bg chart bars */}
               <div className='absolute bottom-4 right-6 flex items-end gap-1 opacity-5 pointer-events-none select-none'>
                 {[30, 50, 40, 70, 55, 90].map((h, i) => (
                   <div

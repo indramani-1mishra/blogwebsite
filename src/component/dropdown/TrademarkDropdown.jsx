@@ -1,54 +1,37 @@
 import React, { useContext } from 'react'
-import { FaBriefcase, FaClipboardCheck, FaExchangeAlt } from 'react-icons/fa';
+import { FaRegRegistered, FaRegCopyright } from 'react-icons/fa';
 import ShareContext from '../../context/shareContext';
 import { Link } from 'react-router-dom';
 
-export default function CompanyRegistrationDropdown() {
+export default function TrademarkDropdown() {
 
   const { activeDropdown, setActiveDropdown } = useContext(ShareContext);
 
   const dropdownData = {
-    incorporation: [
-      "Private Limited Company",
-      "LLP Registration",
-      "One Person Company",
-      "Public Limited Company",
-      "Section 8 Company",
-      "Business Registration License",
-      "Nidhi Company Registration",
-      "Indian Subsidiary Registration"
+    trademark: [
+      "Trademark Registration",
+      "Trademark Renewal",
+      "Trademark Objection",
+      "Trademark Opposition",
+      "Trademark Assignment",
+      "Logo Design",
+      "Series Trademark"
     ],
-    compliance: [
-      "Director DIN e KYC Update",
-      "Appointment of Director",
-      "Removal of Director",
-      "Pvt. Ltd. Winding up",
-      "LLP Winding Up",
-      "Increase Authorized Capital",
-      "Registered Office Change",
-      "Change Company Name",
-    ],
-    conversion: [
-      "OPC to PVT. Conversion",
-      "PVT. to Public Ltd Conversion",
-      "LLP to PVT Conversion",
-      "Sec-8 Winding Up",
-      "Nidhi Winding Up",
-      "Indian Subsidiary Windup"
+    copyright: [
+      "Copyright Registration"
     ]
   };
 
   const columns = [
-    { key: 'incorporation', label: 'Incorporation', icon: <FaBriefcase />,      accent: '#1e6fd9' },
-    { key: 'compliance',    label: 'Compliance',    icon: <FaClipboardCheck />, accent: '#4fc84a' },
-    { key: 'conversion',    label: 'Conversion',    icon: <FaExchangeAlt />,    accent: '#1e6fd9' },
+    { key: 'trademark', label: 'Trademark', icon: <FaRegRegistered />, accent: '#4fc84a' },
+    { key: 'copyright', label: 'Copyright', icon: <FaRegCopyright />, accent: '#1e6fd9' },
   ];
 
   return (
     <div className='relative inline-block'>
 
       {/* Dropdown Menu */}
-      {activeDropdown === 'company' && (
+      {activeDropdown === 'trademark' && (
         <>
           {/* Backdrop */}
           <div
@@ -56,7 +39,7 @@ export default function CompanyRegistrationDropdown() {
             onClick={() => setActiveDropdown(null)}
           />
 
-          <div className='absolute top-full left-0 mt-2 w-[860px] z-50
+          <div className='absolute top-full left-0 mt-2 w-[600px] z-50
                           bg-[#0d1829] border border-[#1e6fd9]/20
                           rounded-xl shadow-2xl shadow-black/50
                           overflow-hidden'>
@@ -64,7 +47,7 @@ export default function CompanyRegistrationDropdown() {
             {/* Top accent bar */}
             <div className='h-1 w-full bg-gradient-to-r from-[#1e6fd9] via-[#4fc84a] to-[#1e6fd9]' />
 
-            <div className='p-8 grid grid-cols-3 gap-8 relative'>
+            <div className='p-8 grid grid-cols-2 gap-8 relative'>
 
               {columns.map(({ key, label, icon, accent }) => (
                 <div key={key}>
@@ -86,12 +69,11 @@ export default function CompanyRegistrationDropdown() {
                   {/* Items */}
                   <ul className='space-y-0.5'>
                     {dropdownData[key].map((item, index) => {
-                      // Generate slug from item name (e.g., "Private Limited Company" -> "private-limited-company")
                       const slug = item.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
                       return (
                         <li key={index}>
                           <Link
-                            to={`/registration/${key}/${slug}`}
+                            to={`/info/trademark/${slug}`}
                             onClick={() => setActiveDropdown(null)}
                             className='flex items-center gap-2 text-sm text-[#7a8fa0]
                                       hover:text-white hover:bg-[#1e6fd9]/10
@@ -110,7 +92,7 @@ export default function CompanyRegistrationDropdown() {
                 </div>
               ))}
 
-              {/* Decorative bg chart bars — VectraTax feel */}
+              {/* Decorative bg chart bars */}
               <div className='absolute bottom-4 right-6 flex items-end gap-1 opacity-5 pointer-events-none select-none'>
                 {[30, 50, 40, 70, 55, 90].map((h, i) => (
                   <div

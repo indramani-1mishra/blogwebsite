@@ -5,10 +5,13 @@ import { AiFillCaretDown } from "react-icons/ai";
 import { CgMoreVerticalAlt } from "react-icons/cg";
 import ShareContext from '../../context/shareContext';
 import CompanyRegistrationDropdown from '../dropdown/DropDown';
+import TrademarkDropdown from '../dropdown/TrademarkDropdown';
+import LicensesDropdown from '../dropdown/LicensesDropdown';
+import TaxComplianceDropdown from '../dropdown/TaxComplianceDropdown';
 
 export default function Header() {
   const [change, setchange] = useState(false);
-  const { isOpen, setIsOpen } = useContext(ShareContext);
+  const { activeDropdown, setActiveDropdown } = useContext(ShareContext);
 
   return (
     <div className='w-full flex flex-row justify-between items-center bg-[#0a0f1a] border-b border-[#1e6fd9]/20 text-white px-6 py-2.5 shadow-lg shadow-black/30'>
@@ -29,16 +32,28 @@ export default function Header() {
           /* ── Primary Nav ── */
           <nav className='hidden lg:flex flex-row items-center gap-0'>
 
-            <Link to="/info/trademark" className='flex items-center gap-1 px-3 py-2 text-[14px] font-medium text-[#b8c4d0] border-r border-[#1e6fd9]/30 hover:text-[#1e6fd9] transition-colors'>
-              <span>Trademark</span>
-              <AiFillCaretDown className='text-xs mt-0.5' />
-            </Link>
+            <div
+              className='relative'
+              onMouseEnter={() => setActiveDropdown('trademark')}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
+              <Link to="/info/trademark" className='flex items-center gap-1 px-3 py-2 text-[14px] font-medium text-[#b8c4d0] border-r border-[#1e6fd9]/30 hover:text-[#1e6fd9] transition-colors'>
+                <span>Trademark</span>
+                <AiFillCaretDown className='text-xs mt-0.5' />
+              </Link>
+              
+              {activeDropdown === 'trademark' && (
+                <div className='absolute top-full left-0 z-50'>
+                  <TrademarkDropdown />
+                </div>
+              )}
+            </div>
 
             {/* Company Registration with Dropdown */}
             <div
               className='relative'
-              onMouseEnter={() => setIsOpen(true)}
-              onMouseLeave={() => setIsOpen(false)}
+              onMouseEnter={() => setActiveDropdown('company')}
+              onMouseLeave={() => setActiveDropdown(null)}
             >
               <Link
                 to="/info/company-registration"
@@ -48,7 +63,7 @@ export default function Header() {
                 <AiFillCaretDown className='text-xs mt-0.5' />
               </Link>
 
-              {isOpen && (
+              {activeDropdown === 'company' && (
                 <div className='absolute top-full left-0 z-50'>
                   <CompanyRegistrationDropdown />
                 </div>
@@ -59,15 +74,39 @@ export default function Header() {
               ISO
             </Link>
 
-            <Link to="/info/licenses" className='flex items-center gap-1 px-3 py-2 text-[14px] font-medium text-[#b8c4d0] border-r border-[#1e6fd9]/30 hover:text-[#1e6fd9] transition-colors'>
-              <span>Licenses</span>
-              <AiFillCaretDown className='text-xs mt-0.5' />
-            </Link>
+            <div
+              className='relative'
+              onMouseEnter={() => setActiveDropdown('licenses')}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
+              <Link to="/info/licenses" className='flex items-center gap-1 px-3 py-2 text-[14px] font-medium text-[#b8c4d0] border-r border-[#1e6fd9]/30 hover:text-[#1e6fd9] transition-colors'>
+                <span>Licenses</span>
+                <AiFillCaretDown className='text-xs mt-0.5' />
+              </Link>
 
-            <Link to="/info/tax-compliance" className='flex items-center gap-1 px-3 py-2 text-[14px] font-medium text-[#b8c4d0] border-r border-[#1e6fd9]/30 hover:text-[#1e6fd9] transition-colors'>
-              <span>Tax & Compliance</span>
-              <AiFillCaretDown className='text-xs mt-0.5' />
-            </Link>
+              {activeDropdown === 'licenses' && (
+                <div className='absolute top-full left-0 z-50'>
+                  <LicensesDropdown />
+                </div>
+              )}
+            </div>
+
+            <div
+              className='relative'
+              onMouseEnter={() => setActiveDropdown('tax')}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
+              <Link to="/info/tax-compliance" className='flex items-center gap-1 px-3 py-2 text-[14px] font-medium text-[#b8c4d0] border-r border-[#1e6fd9]/30 hover:text-[#1e6fd9] transition-colors'>
+                <span>Tax & Compliance</span>
+                <AiFillCaretDown className='text-xs mt-0.5' />
+              </Link>
+
+              {activeDropdown === 'tax' && (
+                <div className='absolute top-full left-0 z-50'>
+                  <TaxComplianceDropdown />
+                </div>
+              )}
+            </div>
 
             <Link to="/info/consumer-dispute" className='px-3 py-2 text-[14px] font-medium text-[#b8c4d0] border-r border-[#1e6fd9]/30 hover:text-[#1e6fd9] transition-colors'>
               Consumer Dispute
