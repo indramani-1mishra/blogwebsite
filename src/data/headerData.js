@@ -254,5 +254,35 @@ export const headerData = [
       'Understand Complex Laws Simply',
       'Demystify Taxation and Compliance'
     ]
+  },
+  {
+    slug: 'about-us',
+    title: 'About Our Company',
+    heroImage: companyRegistrationHero,
+    image: companyRegistrationHero,
+    description: 'Learn about our journey, our mission, and the expert team behind our premier compliance platform.',
+    overview: 'We are a premier business compliance and legal advisory platform, dedicated to empowering entrepreneurs and growing enterprises. Our AI-driven platform and expert professionals work in synergy to simplify the complex landscape of registrations, tax filings, and legal compliances.',
+    features: ['AI-Powered Compliance Platform', 'Expert CA & Legal Professionals', 'Transparent Technology Solutions', 'User-Centric Design Focus', 'Scalable Business Solutions'],
+    benefits: ['Absolute Reliability & Trust', 'Seamless Registration Processes', 'Strategic Legal Consultations', 'Cost-Effective Compliance Management', 'Unwavering Peace of Mind']
+  },
+  {
+    slug: 'privacy-policy',
+    title: 'Privacy Policy',
+    heroImage: legalHero,
+    image: legalHero,
+    description: 'Your privacy and data security are our top priorities. Learn how we protect your information.',
+    overview: 'This Privacy Policy describes how your personal information is collected, used, and shared when you visit or make a purchase from our site. We are committed to maintaining the highest standards of data protection and individual privacy rights.',
+    features: ['Secure Data Encryption', 'Transparent Data Usage Policies', 'User Consent Management', 'Compliance with Global Standards', 'Regular Security Audits'],
+    benefits: ['Complete Confidentiality', 'Data Protection Assurance', 'Legal Rights Empowerment', 'Secure Transactional Environment', 'Transparent Privacy Controls']
+  },
+  {
+    slug: 'terms-of-service',
+    title: 'Terms of Service',
+    heroImage: legalHero,
+    image: legalHero,
+    description: 'Understand the terms and conditions that govern your use of our services and platform.',
+    overview: 'These Terms of Service govern your use of our website and our professional advisory services. By accessing our platform, you agree to comply with these terms. We aim to provide clear and fair terms for all our professional engagements.',
+    features: ['Service Scope Definitions', 'User Responsibility Outlines', 'Professional Fee Disclosures', 'Liability Limitation Clauses', 'Dispute Resolution Framework'],
+    benefits: ['Clear Professional Expectations', 'Legal Certainty for All Parties', 'Structured Service Engagement', 'Fair Dispute Resolution Path', 'Transparent Business Guidelines']
   }
 ];

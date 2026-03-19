@@ -186,6 +186,42 @@ export const subpageData = [
     features: ['Product Standard Identification', 'Application & Documentation', 'Factory Inspection Coordination', 'Sample Testing at BIS Labs', 'ISI Mark License Issuance'],
     benefits: ['Market Trust with ISI Mark', 'Mandatory for Many Products', 'Competitive Market Advantage', 'Government Tender Eligibility', 'Consumer Safety Assurance']
   },
+  {
+    parent: 'licenses',
+    slug: 'shop-establishment',
+    title: 'Shop & Establishment',
+    heroImage: licensesHero,
+    image: licensesHero,
+    accent: '#1e6fd9',
+    description: 'Register your commercial establishment under the Shop & Establishment Act as per state regulations.',
+    overview: 'Every commercial establishment in India must register under the state-specific Shop & Establishment Act. This license is a mandatory legal requirement for opening a physical office or shop. We handle the entire application process across different states.',
+    features: ['State-specific Registration', 'Employee Information Filing', 'Operating Hours Declaration', 'Renewal Management', 'Compliance with Labor Rules'],
+    benefits: ['Legal Proof of Business', 'Mandatory for Bank Account Opening', 'Facilitates Other Licenses', 'Ensures Employee Rights Compliance', 'Protects Against Government Penalties']
+  },
+  {
+    parent: 'licenses',
+    slug: 'trade-license',
+    title: 'Trade License',
+    heroImage: licensesHero,
+    image: licensesHero,
+    accent: '#1e6fd9',
+    description: 'Obtain a municipal trade license to legally carry out business activities in your local jurisdiction.',
+    overview: 'A trade license is a certificate/document which permits a particular person to carry on a particular business at a particular premise. It is issued by the local municipal corporation. We assist in obtaining and renewing trade licenses for various business types.',
+    features: ['Local Municipal Application', 'Premise Verification Support', 'Trade Category Selection', 'Fee Payment Management', 'Renewal Tracking'],
+    benefits: ['Authorization for Local Business', 'Prevents Legal Closure of Premises', 'Demonstrates Local Compliance', 'Eligibility for Local Tenders', 'Builds Trust with Neighborhood']
+  },
+  {
+    parent: 'licenses',
+    slug: 'msme-udyam',
+    title: 'MSME / Udyam',
+    heroImage: licensesHero,
+    image: licensesHero,
+    accent: '#4fc84a',
+    description: 'Get your MSME / Udyam registration to avail various government schemes and benefits for small businesses.',
+    overview: 'Udyam Registration is the government process for MSME (Micro, Small and Medium Enterprises). It is a zero-cost registration that offers a range of benefits including credit support, subsidies, and protection against delayed payments.',
+    features: ['Unified Udyam Portal Filing', 'Aadhar-linked Registration', 'MSME Category Classification', 'Digital Certificate Generation', 'Priority Sector Lending Guidance'],
+    benefits: ['Collateral-Free Bank Loans', 'Interest Rate Subsidies', 'Protection Against Delayed Payments', 'Market Support & Subsidies', 'Electricity Bill Concessions']
+  },
 
   // ═══ TAX & COMPLIANCE DROPDOWN ITEMS ═══
   {
@@ -403,5 +439,90 @@ export const subpageData = [
     overview: 'PF (ECR) and ESIC returns must be filed monthly with accurate contribution details. Annual returns and Form 5A are also required. Delayed filing attracts penal damages up to 100%. Our payroll compliance team ensures timely and error-free filings.',
     features: ['Monthly ECR Filing (PF)', 'Monthly ESIC Contribution Filing', 'Annual PF Return (Form 3A/6A)', 'Employee Exit/Transfer Processing', 'Challan Generation & Payment'],
     benefits: ['Avoids Penal Damages (up to 100%)', 'Employee Benefits Protection', 'Accurate Wage Register', 'Timely Contribution Records', 'Hassle-free Labor Compliance']
+  },
+  {
+    parent: 'tax-compliance',
+    slug: 'income-tax-return',
+    title: 'Income Tax Return',
+    heroImage: taxHero,
+    image: taxHero,
+    accent: '#4fc84a',
+    description: 'File your personal or business income tax returns accurately with expert CA review.',
+    overview: 'Filing Income Tax Returns (ITR) is a mandatory annual exercise for individuals and businesses exceeding the threshold. We handle all ITR forms (ITR-1 to ITR-7) ensuring maximum tax savings and zero errors.',
+    features: ['Tax Liability Computation', 'Investment Proof Verification', 'ITR Form Selection & Filing', 'E-verification Assistance', 'Revision of Filed Returns'],
+    benefits: ['Compliance with Tax Laws', 'Facilitates Loan Approvals', 'Avoids Departmental Notices', 'Proof of Income & Financial Standing', 'Claim Refund of Excess Taxes Paid']
+  },
+  {
+    parent: 'tax-compliance',
+    slug: 'tds-return-filing',
+    title: 'TDS Return Filing',
+    heroImage: taxHero,
+    image: taxHero,
+    accent: '#4fc84a',
+    description: 'Ensure timely and accurate filing of quarterly TDS returns (24Q, 26Q, 27Q) to avoid heavy penalties.',
+    overview: 'Tax Deducted at Source (TDS) must be deposited and reported quarterly. Incorrect filing leads to massive penalties and interest. Our team handles the entire process from challan generation to final Form 16 issuance.',
+    features: ['Quarterly Return Filing', 'Form 16/16A Generation', 'TDS Reconciliation', 'Correction Return Filing', 'Traces Report Analysis'],
+    benefits: ['Avoids Interest & Late Fees', 'Accurate Credit to Deductees', 'Meets Statutory Deadlines', 'Professional TDS Portfolio Management', 'Prevents Notice from Income Tax Dept']
+  },
+  /* ═ ISO / Certifications ═ */
+  {
+    parent: 'iso',
+    slug: 'iso-9001-2015',
+    title: 'ISO 9001:2015',
+    heroImage: licensesHero,
+    image: licensesHero,
+    accent: '#1e6fd9',
+    description: 'Implement Quality Management Systems (QMS) with ISO 9001:2015 certification for global standard excellence.',
+    overview: 'ISO 9001:2015 specifies requirements for a quality management system where an organization needs to demonstrate its ability to consistently provide products and services that meet customer and applicable statutory and regulatory requirements.',
+    features: ['Gap Analysis Study', 'Quality Manual Documentation', 'Internal Audit Support', 'Certification Audit Coordination', 'Periodic Survival Audits'],
+    benefits: ['Global Business Recognition', 'Improved Process Efficiency', 'Enhanced Customer Satisfaction', 'Competency in Global Tenders', 'Standardized Operations']
+  },
+  {
+    parent: 'iso',
+    slug: 'iso-14001-2015',
+    title: 'ISO 14001:2015',
+    heroImage: licensesHero,
+    image: licensesHero,
+    accent: '#1e6fd9',
+    description: 'Demonstrate environmental responsibility with ISO 14001:2015 Environmental Management System certification.',
+    overview: 'ISO 14001:2015 is the international standard that specifies requirements for an effective environmental management system (EMS). It provides a framework that an organization can follow, rather than establishing environmental performance requirements.',
+    features: ['Environmental Aspect Analysis', 'EMS Policy Formulation', 'Resource Management Plan', 'Crisis Management Module', 'Compliance Audit Support'],
+    benefits: ['Reduced Environmental Footprint', 'Legal Compliance Assurance', 'Enhanced Corporate Image', 'Resource Usage Optimization', 'Competitive Bidding Advantage']
+  },
+  {
+    parent: 'iso',
+    slug: 'iso-27001-isms',
+    title: 'ISO 27001 ISMS',
+    heroImage: licensesHero,
+    image: licensesHero,
+    accent: '#1e6fd9',
+    description: 'Secure your business data and information assets with the international ISO 27001 ISMS certification.',
+    overview: 'ISO/IEC 27001 is the international standard for information security management systems (ISMS). It provides requirements for an information security management system (ISMS), though there are more than a dozen standards in the ISO/IEC 27000 family.',
+    features: ['Information Security Gap Analysis', 'Risk Assessment Framework', 'Policy & Procedure Drafting', 'Security Control Implementation', 'ISMS Audit Management'],
+    benefits: ['Protects Critical Business Data', 'Meets Data Privacy Regulations', 'Mitigates Cyber Security Risks', 'Increases Stakeholder Trust', 'Worldwide Security Standard Compliance']
+  },
+  {
+    parent: 'iso',
+    slug: 'ce-mark-certification',
+    title: 'CE Mark Certification',
+    heroImage: licensesHero,
+    image: licensesHero,
+    accent: '#1e6fd9',
+    description: 'Ensure your products meet EU safety, health, and environmental protection requirements with CE Marking.',
+    overview: 'The CE marking is a mandatory conformity marking for certain goods sold within the European Economic Area (EEA) since 1985. It indicates that the products have been assessed to meet high safety, health, and environmental protection requirements.',
+    features: ['Product Classification (Modular Approach)', 'Technical File Preparation', 'Essential Health & Safety Review', 'Declaration of Conformity', 'Symbol Placement Guidance'],
+    benefits: ['Access to European Markets', 'Enhanced Consumer Safety Assurance', 'Streamlined Export Compliance', 'Harmonized Technical Requirements', 'Recognized Quality Symbol Globally']
+  },
+  {
+    parent: 'iso',
+    slug: 'startup-india-registration',
+    title: 'Startup India Registration',
+    heroImage: licensesHero,
+    image: licensesHero,
+    accent: '#4fc84a',
+    description: 'Register under the Startup India initiative to avail tax exemptions, funding, and other government benefits.',
+    overview: 'Startup India is a flagship initiative of the Government of India, intended to build a strong ecosystem that is conducive for the growth of startup businesses. We handle the complete DPIIT recognition process and guide on further exemptions.',
+    features: ['DPIIT Recognition Application', 'Inter-Ministerial Board Guidance', 'Tax Exemption Advisory', 'Self-certification Compliances', 'Intellectual Property Rights Benefits'],
+    benefits: ['3-Year Income Tax Exemption Eligibility', 'Fast Track Trademark & Patent Filing', 'Easy Unwinding of Company', 'Access to Government Funding Schemes', 'Relaxed Norms for Public Procurement']
   }
 ];

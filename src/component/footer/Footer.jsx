@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaEnvelope, FaYoutube } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import googleplay from "../../assets/images/google-play.webp";
 import appstore from "../../assets/images/app-store.webp";
 
@@ -7,14 +8,18 @@ export const Footer = () => {
   const footerLinks = {
     businessRegistration: [
       "Private Limited Company",
-      "Limited Liability Partnership",
+      "LLP Registration",
       "One Person Company",
+      "Public Limited Company",
       "Section 8 Company",
-      "Nidhi Company"
+      "Nidhi Company Registration",
+      "Business Registration License"
     ],
     licenses: [
       "FSSAI Registration",
-      "Import Export Code (IEC)",
+      "FSSAI Renewal",
+      "Import Export Code",
+      "BIS Certificate",
       "Shop & Establishment",
       "Trade License",
       "MSME / Udyam"
@@ -22,16 +27,19 @@ export const Footer = () => {
     intellectualProperty: [
       "Trademark Registration",
       "Copyright Registration",
-      "Patent & Design",
       "Trademark Renewal",
-      "Logo Registration"
+      "Trademark Objection",
+      "Trademark Opposition",
+      "Trademark Assignment",
+      "Logo Design"
     ],
     taxCompliances: [
       "GST Registration",
       "GST Return Filing",
-      "TDS Return Filing",
+      "GST Nil Return Filing",
       "Income Tax Return",
-      "PF & ESIC Registration"
+      "PF-ESIC Registration",
+      "Annual Compliance & Filing"
     ],
     certifications: [
       "ISO 9001:2015",
@@ -43,13 +51,38 @@ export const Footer = () => {
   };
 
   const quickLinks = [
-    "About Us",
-    "Contact Us",
-    "Privacy Policy",
-    "Terms of Service",
-    "Refund Policy",
-    "FAQs"
+    { name: "Home", path: "/" },
+    { name: "About Us", path: "/info/about-us" },
+    { name: "Contact Us", path: "/info/contact" },
+    { name: "Careers", path: "/info/careers" },
+    { name: "Blogs", path: "/info/blogs" },
+    { name: "Privacy Policy", path: "/info/privacy-policy" },
+    { name: "Terms of Service", path: "/info/terms-of-service" }
   ];
+
+  const makeSlug = (str) => 
+    str.toLowerCase()
+      .trim()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)+/g, '');
+
+  const getFooterLink = (category, item) => {
+    const slug = makeSlug(item);
+    switch (category) {
+      case 'businessRegistration':
+        return `/registration/incorporation/${slug}`;
+      case 'licenses':
+        return `/info/licenses/${slug}`;
+      case 'intellectualProperty':
+        return `/info/trademark/${slug}`;
+      case 'taxCompliances':
+        return `/info/tax-compliance/${slug}`;
+      case 'certifications':
+        return `/info/iso/${slug}`;
+      default:
+        return '#';
+    }
+  };
 
   return (
     <>
@@ -65,9 +98,12 @@ export const Footer = () => {
               <ul className='space-y-2'>
                 {footerLinks.businessRegistration.map((link, index) => (
                   <li key={index}>
-                    <a href='#' className='text-gray-300 text-sm hover:text-[#1e6fd9] transition-colors'>
+                    <Link 
+                      to={getFooterLink('businessRegistration', link)} 
+                      className='text-gray-400 text-sm hover:text-[#1e6fd9] transition-colors'
+                    >
                       {link}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -79,9 +115,12 @@ export const Footer = () => {
               <ul className='space-y-2'>
                 {footerLinks.licenses.map((link, index) => (
                   <li key={index}>
-                    <a href='#' className='text-gray-300 text-sm hover:text-[#1e6fd9] transition-colors'>
+                    <Link 
+                      to={getFooterLink('licenses', link)} 
+                      className='text-gray-400 text-sm hover:text-[#1e6fd9] transition-colors'
+                    >
                       {link}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -93,9 +132,12 @@ export const Footer = () => {
               <ul className='space-y-2'>
                 {footerLinks.intellectualProperty.map((link, index) => (
                   <li key={index}>
-                    <a href='#' className='text-gray-300 text-sm hover:text-[#1e6fd9] transition-colors'>
+                    <Link 
+                      to={getFooterLink('intellectualProperty', link)} 
+                      className='text-gray-400 text-sm hover:text-[#1e6fd9] transition-colors'
+                    >
                       {link}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -107,9 +149,12 @@ export const Footer = () => {
               <ul className='space-y-2'>
                 {footerLinks.taxCompliances.map((link, index) => (
                   <li key={index}>
-                    <a href='#' className='text-gray-300 text-sm hover:text-[#1e6fd9] transition-colors'>
+                    <Link 
+                      to={getFooterLink('taxCompliances', link)} 
+                      className='text-gray-400 text-sm hover:text-[#1e6fd9] transition-colors'
+                    >
                       {link}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -121,9 +166,12 @@ export const Footer = () => {
               <ul className='space-y-2'>
                 {footerLinks.certifications.map((link, index) => (
                   <li key={index}>
-                    <a href='#' className='text-gray-300 text-sm hover:text-[#1e6fd9] transition-colors'>
+                    <Link 
+                      to={getFooterLink('certifications', link)} 
+                      className='text-gray-400 text-sm hover:text-[#1e6fd9] transition-colors'
+                    >
                       {link}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -132,7 +180,7 @@ export const Footer = () => {
           </div>
 
           {/* Company Info */}
-          <div className='border-t border-gray-800 pt-8 mb-8 mt-12'>
+          <div className='border-t border-gray-800/60 pt-8 mb-8 mt-12'>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-start'>
               <div>
                 <h4 className='text-white font-bold text-lg mb-3'>About Our Company</h4>
@@ -158,67 +206,71 @@ export const Footer = () => {
           </div>
 
           {/* Social Media & App Links */}
-          <div className='flex flex-col md:flex-row justify-between items-start md:items-center gap-8 border-t border-gray-300 pt-8'>
+          <div className='flex flex-col md:flex-row justify-between items-start md:items-center gap-8 border-t border-gray-800/60 pt-8'>
 
             {/* Left: Social Media */}
             <div>
-              <h4 className='text-gray-900 font-semibold text-sm mb-4'>Follow Us</h4>
+              <h4 className='text-gray-300 font-semibold text-sm mb-4'>Follow Us</h4>
               <div className='flex gap-3'>
-                <a href='#' className='w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white hover:bg-blue-700 transition-colors'>
+                <a href='#' className='w-9 h-9 rounded-full bg-[#1e6fd9]/10 border border-[#1e6fd9]/30 flex items-center justify-center text-[#1e6fd9] hover:bg-[#1e6fd9] hover:text-white transition-all duration-300'>
                   <FaFacebookF />
                 </a>
-                <a href='#' className='w-10 h-10 rounded-full bg-black flex items-center justify-center text-white hover:bg-gray-800 transition-colors'>
+                <a href='#' className='w-9 h-9 rounded-full bg-[#1e6fd9]/10 border border-[#1e6fd9]/30 flex items-center justify-center text-[#1e6fd9] hover:bg-[#1e6fd9] hover:text-white transition-all duration-300'>
                   <FaTwitter />
                 </a>
-                <a href='#' className='w-10 h-10 rounded-full bg-blue-700 flex items-center justify-center text-white hover:bg-blue-800 transition-colors'>
+                <a href='#' className='w-9 h-9 rounded-full bg-[#1e6fd9]/10 border border-[#1e6fd9]/30 flex items-center justify-center text-[#1e6fd9] hover:bg-[#1e6fd9] hover:text-white transition-all duration-300'>
                   <FaLinkedinIn />
                 </a>
-                <a href='#' className='w-10 h-10 rounded-full bg-gradient-to-br from-purple-600 to-pink-500 flex items-center justify-center text-white hover:from-purple-700 hover:to-pink-600 transition-colors'>
+                <a href='#' className='w-9 h-9 rounded-full bg-[#1e6fd9]/10 border border-[#1e6fd9]/30 flex items-center justify-center text-[#1e6fd9] hover:bg-[#1e6fd9] hover:text-white transition-all duration-300'>
                   <FaInstagram />
                 </a>
-                <a href='#' className='w-10 h-10 rounded-full bg-red-600 flex items-center justify-center text-white hover:bg-red-700 transition-colors'>
+                <a href='#' className='w-9 h-9 rounded-full bg-[#1e6fd9]/10 border border-[#1e6fd9]/30 flex items-center justify-center text-[#1e6fd9] hover:bg-[#1e6fd9] hover:text-white transition-all duration-300'>
                   <FaEnvelope />
                 </a>
-                <a href='#' className='w-10 h-10 rounded-full bg-red-600 flex items-center justify-center text-white hover:bg-red-700 transition-colors'>
+                <a href='#' className='w-9 h-9 rounded-full bg-[#1e6fd9]/10 border border-[#1e6fd9]/30 flex items-center justify-center text-[#1e6fd9] hover:bg-[#1e6fd9] hover:text-white transition-all duration-300'>
                   <FaYoutube />
                 </a>
               </div>
 
               {/* App Download Buttons */}
               <div className='flex gap-3 mt-6'>
-                <a href='#'>
-                  <img src={googleplay} alt="Get it on Google Play" className='h-12' />
+                <a href='#' className='hover:opacity-80 transition-opacity'>
+                  <img src={googleplay} alt="Get it on Google Play" className='h-10' />
                 </a>
-                <a href='#'>
-                  <img src={appstore} alt="Download on App Store" className='h-12' />
+                <a href='#' className='hover:opacity-80 transition-opacity'>
+                  <img src={appstore} alt="Download on App Store" className='h-10' />
                 </a>
               </div>
             </div>
 
             {/* Right: Quick Links & Contact */}
-            <div className='flex flex-col gap-4'>
-              <div className='flex flex-wrap gap-4 justify-end'>
+            <div className='flex flex-col gap-6 md:items-end'>
+              <div className='flex flex-wrap gap-x-6 gap-y-2 md:justify-end'>
                 {quickLinks.map((link, index) => (
-                  <a
+                  <Link
                     key={index}
-                    href='#'
-                    className='text-gray-600 text-sm hover:text-green-600 transition-colors'
+                    to={link.path}
+                    className='text-gray-400 text-sm hover:text-[#4fc84a] transition-colors'
                   >
-                    {link}
-                  </a>
+                    {link.name}
+                  </Link>
                 ))}
               </div>
 
-              <div className='text-right'>
-                <p className='text-gray-600 text-sm'>
-                  For any grievance mail to:
-                  <a href='mailto:complain@fastinfo.com' className='text-blue-600 hover:underline ml-1'>
-                    info@vectrataxprocompany.com
-                  </a>
-                </p>
+              <div className='md:text-right'>
+                <p className='text-gray-400 text-xs mb-1'>For support or inquiries:</p>
+                <a href='mailto:info@vectrataxprocompany.com' className='text-[#1e6fd9] hover:text-[#4fc84a] text-sm font-medium transition-colors'>
+                  info@vectrataxprocompany.com
+                </a>
               </div>
             </div>
 
+          </div>
+
+          <div className='mt-8 pt-8 border-t border-gray-800/40 text-center'>
+            <p className='text-gray-500 text-xs'>
+              © {new Date().getFullYear()} VectraTax Pro Company. All rights reserved.
+            </p>
           </div>
 
         </div>
