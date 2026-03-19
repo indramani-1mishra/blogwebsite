@@ -57,11 +57,106 @@ export default function Header() {
     { name: 'Blogs', path: '/info/blogs' },
   ];
 
-  const dropdownComponentMap = {
-    trademark: <TrademarkDropdown />,
-    company: <CompanyRegistrationDropdown />,
-    licenses: <LicensesDropdown />,
-    tax: <TaxComplianceDropdown />,
+  /* ── Mobile dropdown data (flat link lists for each category) ── */
+  const mobileDropdownData = {
+    trademark: {
+      basePath: '/info/trademark',
+      sections: [
+        {
+          label: 'Trademark',
+          items: [
+            "Trademark Registration", "Trademark Renewal", "Trademark Objection",
+            "Trademark Opposition", "Trademark Assignment", "Logo Design", "Series Trademark"
+          ]
+        },
+        {
+          label: 'Copyright',
+          items: ["Copyright Registration"]
+        }
+      ]
+    },
+    company: {
+      basePath: '/registration',
+      sections: [
+        {
+          label: 'Incorporation',
+          key: 'incorporation',
+          items: [
+            "Private Limited Company", "LLP Registration", "One Person Company",
+            "Public Limited Company", "Section 8 Company", "Business Registration License",
+            "Nidhi Company Registration", "Indian Subsidiary Registration"
+          ]
+        },
+        {
+          label: 'Compliance',
+          key: 'compliance',
+          items: [
+            "Director DIN e KYC Update", "Appointment of Director", "Removal of Director",
+            "Pvt. Ltd. Winding up", "LLP Winding Up", "Increase Authorized Capital",
+            "Registered Office Change", "Change Company Name"
+          ]
+        },
+        {
+          label: 'Conversion',
+          key: 'conversion',
+          items: [
+            "OPC to PVT. Conversion", "PVT. to Public Ltd Conversion",
+            "LLP to PVT Conversion", "Sec-8 Winding Up", "Nidhi Winding Up",
+            "Indian Subsidiary Windup"
+          ]
+        }
+      ]
+    },
+    licenses: {
+      basePath: '/info/licenses',
+      sections: [
+        {
+          label: 'Registrations',
+          items: [
+            "FSSAI Registration", "FSSAI Renewal", "FSSAI Modification",
+            "Import Export Code", "Import Export Code Modification"
+          ]
+        },
+        {
+          label: 'Filings & Certificates',
+          items: ["FSSAI Annual Return Filing", "BIS Certificate"]
+        }
+      ]
+    },
+    tax: {
+      basePath: '/info/tax-compliance',
+      sections: [
+        {
+          label: 'GST',
+          items: [
+            "GST Registration", "GST Return Filing", "GST Nil Return Filing",
+            "GST Modification", "GSTR-9 Annual Filing", "GST LUT Filing", "GST E-Way Bill"
+          ]
+        },
+        {
+          label: 'Annual Compliances & Others',
+          items: [
+            "Annual Compliance & Filing", "Annual Compliance & Bookkeeping",
+            "Tax Planning & Consultancy", "Tax & Compliance", "Online Bookkeeping",
+            "12A-80G-CSR", "Project Report", "DPT-3 Filing", "NGO DARPAN Registration"
+          ]
+        },
+        {
+          label: 'Payroll Compliance',
+          items: ["PF-ESIC Registration", "PF-ESIC Return Filing"]
+        }
+      ]
+    }
+  };
+
+  const makeSlug = (str) => str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+
+  const getMobileLink = (dropdownKey, section, item) => {
+    const slug = makeSlug(item);
+    if (dropdownKey === 'company') {
+      return `/registration/${section.key}/${slug}`;
+    }
+    return `${mobileDropdownData[dropdownKey].basePath}/${slug}`;
   };
 
   return (
@@ -264,23 +359,43 @@ export default function Header() {
                     />
                   </button>
 
-                  {/* Accordion panel */}
+                  {/* Accordion panel — mobile-friendly inline links */}
                   <div
-                    className={`overflow-hidden transition-all duration-300 ease-in-out ${mobileAccordion === item.dropdown ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}
+                    className={`overflow-hidden transition-all duration-300 ease-in-out ${mobileAccordion === item.dropdown ? 'max-h-[1200px] opacity-100' : 'max-h-0 opacity-0'}`}
                   >
-                    <div className='pl-2 pr-1 py-2 mb-1 bg-[#0e1a2e] rounded-lg border border-[#1e6fd9]/10'>
-                      {/* Link to main page */}
+                    <div className='py-2 mb-1 bg-[#0e1a2e] rounded-lg border border-[#1e6fd9]/10'>
+
+                      {/* "View All" link */}
                       <Link
                         to={item.path}
                         onClick={() => setMobileOpen(false)}
-                        className='block px-3 py-2 text-[13px] font-semibold text-[#1e6fd9] hover:text-white transition-colors rounded'
+                        className='flex items-center gap-2 mx-2 px-3 py-2 text-[13px] font-semibold text-[#1e6fd9] hover:text-white hover:bg-[#1e6fd9]/10 rounded-md transition-colors'
                       >
-                        View All →
+                        <span className='w-1.5 h-1.5 rounded-full bg-[#1e6fd9]' />
+                        View All {item.name} →
                       </Link>
-                      {/* Inline dropdown content */}
-                      <div className='mobile-dropdown-content'>
-                        {dropdownComponentMap[item.dropdown]}
-                      </div>
+
+                      {/* Render each section from mobileDropdownData */}
+                      {mobileDropdownData[item.dropdown]?.sections.map((section, sIdx) => (
+                        <div key={sIdx} className='mt-2'>
+                          {/* Section label */}
+                          <p className='px-5 py-1 text-[10px] font-bold text-[#4fc84a] uppercase tracking-[0.12em]'>
+                            {section.label}
+                          </p>
+                          {/* Section items */}
+                          {section.items.map((subItem, iIdx) => (
+                            <Link
+                              key={iIdx}
+                              to={getMobileLink(item.dropdown, section, subItem)}
+                              onClick={() => setMobileOpen(false)}
+                              className='flex items-center gap-2 mx-2 px-3 py-1.5 text-[13px] text-[#7a8fa0] hover:text-white hover:bg-[#1e6fd9]/10 rounded-md transition-all'
+                            >
+                              <span className='w-1 h-1 rounded-full bg-[#1e6fd9]/40 flex-shrink-0' />
+                              {subItem}
+                            </Link>
+                          ))}
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </>
