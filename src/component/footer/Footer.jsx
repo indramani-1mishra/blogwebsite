@@ -1,8 +1,7 @@
 import React from 'react'
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaEnvelope, FaYoutube } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import googleplay from "../../assets/images/google-play.webp";
-import appstore from "../../assets/images/app-store.webp";
+
 
 export const Footer = () => {
   const footerLinks = {
@@ -10,43 +9,46 @@ export const Footer = () => {
       "Private Limited Company",
       "LLP Registration",
       "One Person Company",
+      "Business Registration License",
       "Public Limited Company",
       "Section 8 Company",
       "Nidhi Company Registration",
-      "Business Registration License"
     ],
     licenses: [
-      "FSSAI Registration",
-      "FSSAI Renewal",
+
       "Import Export Code",
       "BIS Certificate",
-      "Shop & Establishment",
+      "FSSAI Registration",
+      "FSSAI Renewal",
       "Trade License",
+      "Shop & Establishment",
       "MSME / Udyam"
     ],
     intellectualProperty: [
-      "Trademark Registration",
-      "Copyright Registration",
-      "Trademark Renewal",
       "Trademark Objection",
       "Trademark Opposition",
       "Trademark Assignment",
+      "Trademark Registration",
+      "Copyright Registration",
+      "Patent Registration",
+      "Trademark Renewal",
       "Logo Design"
     ],
     taxCompliances: [
-      "GST Registration",
-      "GST Return Filing",
-      "GST Nil Return Filing",
-      "Income Tax Return",
       "PF-ESIC Registration",
-      "Annual Compliance & Filing"
+      "Annual Compliance & Filing",
+      "GST Return Filing",
+      "GST Registration",
+      "Income Tax Return",
+      "GST Nil Return Filing",
+
     ],
     certifications: [
+      "Startup India Registration",
       "ISO 9001:2015",
+      "CE Mark Certification",
       "ISO 14001:2015",
       "ISO 27001 ISMS",
-      "CE Mark Certification",
-      "Startup India Registration"
     ]
   };
 
@@ -60,7 +62,7 @@ export const Footer = () => {
     { name: "Terms of Service", path: "/info/terms-of-service" }
   ];
 
-  const makeSlug = (str) => 
+  const makeSlug = (str) =>
     str.toLowerCase()
       .trim()
       .replace(/[^a-z0-9]+/g, '-')
@@ -98,8 +100,8 @@ export const Footer = () => {
               <ul className='space-y-2'>
                 {footerLinks.businessRegistration.map((link, index) => (
                   <li key={index}>
-                    <Link 
-                      to={getFooterLink('businessRegistration', link)} 
+                    <Link
+                      to={getFooterLink('businessRegistration', link)}
                       className='text-gray-400 text-sm hover:text-[#1e6fd9] transition-colors'
                     >
                       {link}
@@ -115,8 +117,8 @@ export const Footer = () => {
               <ul className='space-y-2'>
                 {footerLinks.licenses.map((link, index) => (
                   <li key={index}>
-                    <Link 
-                      to={getFooterLink('licenses', link)} 
+                    <Link
+                      to={getFooterLink('licenses', link)}
                       className='text-gray-400 text-sm hover:text-[#1e6fd9] transition-colors'
                     >
                       {link}
@@ -132,8 +134,8 @@ export const Footer = () => {
               <ul className='space-y-2'>
                 {footerLinks.intellectualProperty.map((link, index) => (
                   <li key={index}>
-                    <Link 
-                      to={getFooterLink('intellectualProperty', link)} 
+                    <Link
+                      to={getFooterLink('intellectualProperty', link)}
                       className='text-gray-400 text-sm hover:text-[#1e6fd9] transition-colors'
                     >
                       {link}
@@ -149,8 +151,8 @@ export const Footer = () => {
               <ul className='space-y-2'>
                 {footerLinks.taxCompliances.map((link, index) => (
                   <li key={index}>
-                    <Link 
-                      to={getFooterLink('taxCompliances', link)} 
+                    <Link
+                      to={getFooterLink('taxCompliances', link)}
                       className='text-gray-400 text-sm hover:text-[#1e6fd9] transition-colors'
                     >
                       {link}
@@ -166,8 +168,8 @@ export const Footer = () => {
               <ul className='space-y-2'>
                 {footerLinks.certifications.map((link, index) => (
                   <li key={index}>
-                    <Link 
-                      to={getFooterLink('certifications', link)} 
+                    <Link
+                      to={getFooterLink('certifications', link)}
                       className='text-gray-400 text-sm hover:text-[#1e6fd9] transition-colors'
                     >
                       {link}
@@ -197,13 +199,7 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* Website Disclaimer */}
-          <div className='mb-8 bg-[#111827]/50 p-6 rounded-lg border border-gray-800/60'>
-            <h4 className='text-gray-300 font-bold text-xs uppercase tracking-wider mb-3'>Legal Disclaimer :</h4>
-            <p className='text-gray-500 text-xs leading-relaxed'>
-              This platform is privately owned and operated as a B2B consultancy platform. We are an independent firm facilitating business registrations, accounting, and compliance services. We are not a government entity, nor are we endorsed by or affiliated with any government agency/department. The forms available on this site are designed to gather necessary information tailored to our clients' needs and do not substitute for official government statutory applications. The fees collected reflect our professional advisory, technology platform utilization, and expert support. While we utilize advanced AI optimizations and rigorous expert reviews to ensure the highest degree of accuracy, we do not function as a traditional law firm. Information provided here does not constitute formal legal counsel. For dedicated legal representation or specific legal proceedings, we strongly recommend consulting an independent practicing advocate.
-            </p>
-          </div>
+
 
           {/* Social Media & App Links */}
           <div className='flex flex-col md:flex-row justify-between items-start md:items-center gap-8 border-t border-gray-800/60 pt-8'>
@@ -233,14 +229,7 @@ export const Footer = () => {
               </div>
 
               {/* App Download Buttons */}
-              <div className='flex gap-3 mt-6'>
-                <a href='#' className='hover:opacity-80 transition-opacity'>
-                  <img src={googleplay} alt="Get it on Google Play" className='h-10' />
-                </a>
-                <a href='#' className='hover:opacity-80 transition-opacity'>
-                  <img src={appstore} alt="Download on App Store" className='h-10' />
-                </a>
-              </div>
+
             </div>
 
             {/* Right: Quick Links & Contact */}

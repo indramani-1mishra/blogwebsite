@@ -67,7 +67,7 @@ export default function TaxComplianceDropdown() {
 
                   {/* Column header */}
                   <div className='flex items-center gap-3 mb-5 pb-3'
-                       style={{ borderBottom: `1px solid ${accent}40` }}>
+                    style={{ borderBottom: `1px solid ${accent}40` }}>
                     <div
                       className='w-8 h-8 rounded flex items-center justify-center text-white text-sm flex-shrink-0'
                       style={{ background: accent }}

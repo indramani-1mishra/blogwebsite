@@ -170,17 +170,17 @@ export default function SubpageDetail() {
             <div className={`bg-[#0d1829] border rounded-2xl p-6 transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ borderColor: `${accent}15` }}>
               <h4 className='text-lg font-bold text-white mb-4'>Quick Contact</h4>
               <div className='flex flex-col gap-3'>
-                <a href='tel:+919999999999' className='flex items-center gap-3 text-[#7a8fa0] hover:text-white transition-colors group'>
+                <a href='tel:+919548011256' className='flex items-center gap-3 text-[#7a8fa0] hover:text-white transition-colors group'>
                   <div className='w-9 h-9 rounded-lg flex items-center justify-center transition-colors' style={{ backgroundColor: `${accent}15` }}>
                     <FaPhoneAlt className='text-xs' style={{ color: accent }} />
                   </div>
-                  <span className='text-sm'>+91 99999-99999</span>
+                  <span className='text-sm'>+91-9548011256</span>
                 </a>
-                <a href='mailto:info@company.com' className='flex items-center gap-3 text-[#7a8fa0] hover:text-white transition-colors group'>
+                <a href='mailto:info@vectrataxprocompany.com' className='flex items-center gap-3 text-[#7a8fa0] hover:text-white transition-colors group'>
                   <div className='w-9 h-9 rounded-lg flex items-center justify-center transition-colors' style={{ backgroundColor: `${accent}15` }}>
                     <FaEnvelope className='text-xs' style={{ color: accent }} />
                   </div>
-                  <span className='text-sm'>info@company.com</span>
+                  <span className='text-sm'>info@vectrataxprocompany.com</span>
                 </a>
               </div>
             </div>

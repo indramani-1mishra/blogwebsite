@@ -3,15 +3,17 @@ import { FaAward, FaSmile, FaCertificate, FaShieldAlt, FaUserTie, FaClock, FaBol
 
 export default function Whyuse() {
   const features = [
-    { id: 1, icon: <FaAward className='text-3xl' />,      title: "Recognized by Govt. of India" },
-    { id: 2, icon: <FaSmile className='text-3xl' />,      title: "1 Lakh+ Happy Customers Across India" },
+
+    { id: 4, icon: <FaShieldAlt className='text-3xl' />, title: "Data Security & Trust" },
+    { id: 5, icon: <FaUserTie className='text-3xl' />, title: "Trained & Professional Experts" },
+
+    { id: 7, icon: <FaBolt className='text-3xl' />, title: "Super Fast Service" },
+    { id: 1, icon: <FaAward className='text-3xl' />, title: "Recognized by Govt. of India" },
+    { id: 2, icon: <FaSmile className='text-3xl' />, title: "1 Lakh+ Happy Customers Across India" },
     { id: 3, icon: <FaCertificate className='text-3xl' />, title: "ISO Certified" },
-    { id: 4, icon: <FaShieldAlt className='text-3xl' />,  title: "Data Security & Trust" },
-    { id: 5, icon: <FaUserTie className='text-3xl' />,    title: "Trained & Professional Experts" },
-    { id: 6, icon: <FaClock className='text-3xl' />,      title: "On Time Service" },
-    { id: 7, icon: <FaBolt className='text-3xl' />,       title: "Super Fast Service" },
-    { id: 8, icon: <FaHeadset className='text-3xl' />,    title: "Quick Response Team" },
-    { id: 9, icon: <FaRupeeSign className='text-3xl' />,  title: "Affordable" },
+    { id: 8, icon: <FaHeadset className='text-3xl' />, title: "Quick Response Team" },
+    { id: 9, icon: <FaRupeeSign className='text-3xl' />, title: "Affordable" },
+    { id: 6, icon: <FaClock className='text-3xl' />, title: "On Time Service" },
   ];
 
   return (
