@@ -26,13 +26,14 @@ export const Footer = () => {
       "FSSAI Renewal",
     ],
     businessRegistration: [
-      "Private Limited Company",
-      "LLP Registration",
+
       "One Person Company",
       "Business Registration License",
+      "LLP Registration",
       "Public Limited Company",
       "Section 8 Company",
       "Nidhi Company Registration",
+      "Private Limited Company",
     ],
     intellectualProperty: [
       "Trademark Objection",
