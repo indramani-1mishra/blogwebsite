@@ -5,6 +5,26 @@ import { Link } from 'react-router-dom';
 
 export const Footer = () => {
   const footerLinks = {
+
+    certifications: [
+      "Startup India Registration",
+      "ISO 9001:2015",
+      "CE Mark Certification",
+      "ISO 14001:2015",
+      "ISO 27001 ISMS",
+    ],
+
+    licenses: [
+
+      "Import Export Code",
+      "BIS Certificate",
+
+      "Trade License",
+      "Shop & Establishment",
+      "MSME / Udyam",
+      "FSSAI Registration",
+      "FSSAI Renewal",
+    ],
     businessRegistration: [
       "Private Limited Company",
       "LLP Registration",
@@ -13,16 +33,6 @@ export const Footer = () => {
       "Public Limited Company",
       "Section 8 Company",
       "Nidhi Company Registration",
-    ],
-    licenses: [
-
-      "Import Export Code",
-      "BIS Certificate",
-      "FSSAI Registration",
-      "FSSAI Renewal",
-      "Trade License",
-      "Shop & Establishment",
-      "MSME / Udyam"
     ],
     intellectualProperty: [
       "Trademark Objection",
@@ -35,21 +45,15 @@ export const Footer = () => {
       "Logo Design"
     ],
     taxCompliances: [
-      "PF-ESIC Registration",
-      "Annual Compliance & Filing",
       "GST Return Filing",
       "GST Registration",
       "Income Tax Return",
+      "PF-ESIC Registration",
+      "Annual Compliance & Filing",
       "GST Nil Return Filing",
 
     ],
-    certifications: [
-      "Startup India Registration",
-      "ISO 9001:2015",
-      "CE Mark Certification",
-      "ISO 14001:2015",
-      "ISO 27001 ISMS",
-    ]
+
   };
 
   const quickLinks = [

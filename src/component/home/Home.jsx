@@ -10,13 +10,13 @@ import Whyuse from '../whyuse/Whyuse'
 export default function Home() {
   return (
     <>
-      <Crousel/>
-      <LowerCrousel/>
-      <Aboutuspage/>
-      <Ourservice/>
-      <Networks/>
-      <Eventgallry/>
-      <Whyuse/>
+      <Crousel />
+      <LowerCrousel />
+      <Aboutuspage />
+      <Ourservice />
+      <Networks />
+      <Eventgallry />
+      <Whyuse />
     </>
   )
 }
