@@ -27,13 +27,15 @@ export const Footer = () => {
     ],
     businessRegistration: [
 
-      "One Person Company",
+
       "Business Registration License",
-      "LLP Registration",
       "Public Limited Company",
+      "LLP Registration",
+      "Private Limited Company",
+      "One Person Company",
       "Section 8 Company",
       "Nidhi Company Registration",
-      "Private Limited Company",
+
     ],
     intellectualProperty: [
       "Trademark Objection",
